@@ -42,6 +42,10 @@ It's just a Git Repo. But you can't clone into a directory with existing files, 
    alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
    ```
 
+5. Don't show untracked files.
+   ```sh
+   dotfiles config --local status.showUntrackedFiles no
+   ```
 
 ## Features
 
