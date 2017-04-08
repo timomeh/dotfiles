@@ -6,12 +6,6 @@ Dotfiles, without symlinking or stuff. Just plain dotfiles and configurations.
 
 I've set up this according to [this HN thread](https://news.ycombinator.com/item?id=11071754).
 
-```sh
-git init --bare $HOME/.dotfiles
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dotfiles config --local status.showUntrackedFiles no
-```
-
 ## Usage
 
 `dotfiles` is an alias to the git in my home directory. (see above)
