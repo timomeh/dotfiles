@@ -4,7 +4,7 @@ Dotfiles, without symlinking or stuff. Just plain dotfiles and configurations.
 
 ## Background
 
-I've set up this according to [this HN thread](https://news.ycombinator.com/item?id=11071754).
+I've set this repo up according to [this HN thread](https://news.ycombinator.com/item?id=11071754).
 
 ```sh
 git init --bare $HOME/.dotfiles
