@@ -1,0 +1,39 @@
+"*":
+  "atom-material-ui":
+    colors: {}
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "atom-material-ui"
+      "one-dark-syntax"
+    ]
+    useCustomTitleBar: true
+  editor:
+    fontFamily: "Fira Mono"
+    fontSize: 15
+    lineHeight: 1.8
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "479e37d9-5fdf-42c0-8863-37d0402a9639"
+  "file-icons":
+    coloured: false
+    onChanges: true
+  minimap:
+    plugins:
+      "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "spell-check":
+    locales: [
+      "en-US"
+      "de-DE"
+    ]
+  welcome:
+    showOnStartup: false
