@@ -27,3 +27,18 @@ export NVM_LAZY_LOAD=true
 alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+
+# ---------------------------------------------------------
+# Git Alias Setup
+# ---------------------------------------------------------
+
+function_exists() {
+  declare -f -F $1 > /dev/null
+  return $?
+}
+
+OLD_IFS=$IFS; IFS=$'\n'
+for al in `git wat`; do
+  alias g${al%=*}="git ${al%=*}"
+done; IFS=$OLD_IFS
