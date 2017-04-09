@@ -15,12 +15,12 @@
 	cam = commit -a -m
 	m = commit --amend --verbose
 
-	s = status -s
+	s = status
 	co = checkout
 	cob = checkout -b
 
 	# list aliases
-	wat = "!git config -l | grep alias | cut -c 7-"
+	wat = !"git config -l | grep alias | cut -c 7-"
 
 [core]
 	excludesfile = ~/.gitignore_global
