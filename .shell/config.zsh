@@ -16,7 +16,6 @@ autoload -U compinit
 compinit
 zmodload -i zsh/complist
 
-setopt complete_aliases   # use aliases in autocompletion
 setopt always_to_end      # jump to end when completing
 setopt complete_in_word   # completion when inside of word
 setopt correct            # correct completion

@@ -18,6 +18,7 @@
 	s = status
 	co = checkout
 	cob = checkout -b
+	cof = checkout --
 
 	# list aliases
 	wat = !"git config -l | grep alias | cut -c 7-"
