@@ -30,13 +30,8 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 
 # ---------------------------------------------------------
-# Git Alias Setup
+# Git Aliases – read from `git wat`
 # ---------------------------------------------------------
-
-function_exists() {
-  declare -f -F $1 > /dev/null
-  return $?
-}
 
 OLD_IFS=$IFS; IFS=$'\n'
 for al in `git wat`; do
