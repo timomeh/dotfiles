@@ -27,6 +27,7 @@ export NVM_LAZY_LOAD=true
 alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias d="docker"
 
 
 # ---------------------------------------------------------
