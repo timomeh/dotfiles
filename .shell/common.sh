@@ -18,6 +18,8 @@ export PATH=${PATH}:~/.yarn/bin
 
 export NVM_AUTO_USE=true
 export NVM_LAZY_LOAD=true
+export ENHANCD_DOT_ARG=.
+export ENHANCD_HYPHEN_ARG=--
 
 
 # ---------------------------------------------------------
