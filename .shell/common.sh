@@ -3,6 +3,8 @@
 
 source "$HOME/.shell/prompt.sh"
 
+eval "$(rbenv init -)"
+
 
 # ---------------------------------------------------------
 # PATH
@@ -10,6 +12,7 @@ source "$HOME/.shell/prompt.sh"
 
 export PATH=${PATH}:~/bin
 export PATH=${PATH}:~/.yarn/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 
 # ---------------------------------------------------------
