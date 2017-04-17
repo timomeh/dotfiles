@@ -104,12 +104,15 @@ __prompt_dir() {
 __prompt_spaces() {
   local spacewidth
   local zero='%([BSUbfksu]|([FK]|){*})'
-  local pslength=${#${(S%%)PS1//$~zero/}}
-  ((spacewidth = ${COLUMNS} - ${pslength} - 10))
   local spacing=""
-  for i in {1..$spacewidth}; do
-    spacing="${spacing} "
-  done
+  local pslength=${#${(S%%)PS1//$~zero/}}
+  local amount_to_right=$COLUMNS-10
+  if [[ "$pslength" -lt "$amount_to_right" ]]; then
+    ((spacewidth = ${amount_to_right} - ${pslength}))
+    for i in {1..$spacewidth}; do
+      spacing="${spacing} "
+    done
+  fi
   PS1+=$spacing
 }
 
