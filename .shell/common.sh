@@ -4,6 +4,7 @@
 source "$HOME/.shell/prompt.sh"
 
 eval "$(rbenv init -)"
+eval $(thefuck --alias)
 
 
 # ---------------------------------------------------------
