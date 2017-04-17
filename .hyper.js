@@ -187,7 +187,7 @@ module.exports = {
         top: 3,
         right: 0,
         fontSize: '10px',
-        backgroundColor: '#D81B60',
+        backgroundColor: 'rgba(4, 7, 8, 0.4)',
         paddingLeft: 12,
         paddingRight: 8,
         lineHeight: 2.4,
