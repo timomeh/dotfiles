@@ -1,17 +1,50 @@
 "*":
+  "atom-latex":
+    hide_log_if_success: true
+    preview_after_build: "Do nothing"
   "atom-material-ui":
-    colors: {}
+    colors:
+      abaseColor: "#af0c56"
+    fonts: {}
     tabs:
       compactTabs: true
+      tintedTabBar: true
     treeView:
       compactList: true
+    ui: {}
+  "atom-package-deps":
+    ignored: []
+  "autocomplete-plus":
+    scopeBlacklist: [
+      ".source.narrow"
+    ]
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "emmet"
+      "minimap-autohide"
+      "docblockr"
+    ]
+    packagesWithKeymapsDisabled: [
+      "rails-snippets"
+    ]
+    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "one-dark-syntax"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom-inset"
   editor:
     fontFamily: "Fira Mono"
     fontSize: 15
@@ -19,21 +52,73 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+  emmet:
+    extensionsPath: "~/.emmet"
+  "emmet-atom-plugin":
+    enableMathCompletions: false
   "exception-reporting":
     userId: "479e37d9-5fdf-42c0-8863-37d0402a9639"
   "file-icons":
     coloured: false
     onChanges: true
+  "git-plus":
+    commits:
+      verboseCommits: true
+  jumpy: {}
+  "linter-js-standard":
+    checkStyleDevDependencies: true
+  "linter-ui-default":
+    panelHeight: 163
+  "markdown-preview":
+    useGitHubStyle: true
   minimap:
     plugins:
-      "minimap-autohide": true
+      "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
-  "one-dark-ui":
-    layoutMode: "Compact"
+  "nord-atom-ui": {}
+  "one-dark-ui": {}
+  "pristine-ui":
+    hideDockButtons: true
   "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.tex.latex"
+    ]
     locales: [
       "en-US"
       "de-DE"
     ]
+  "tree-view": {}
+  "vim-mode-plus":
+    startInInsertMode: true
   welcome:
     showOnStartup: false
+".beamer.latex.tex.text":
+  editor:
+    preferredLineLength: 801
+".bibtex.text":
+  editor:
+    softWrap: false
+    softWrapAtPreferredLineLength: false
+".knitr.latex.tex.text":
+  editor:
+    preferredLineLength: 100
+".latex.memoir.tex.text":
+  editor:
+    preferredLineLength: 801
+".latex.tex.text":
+  editor:
+    preferredLineLength: 100
+    softWrapAtPreferredLineLength: true
+".latex.tex.text.tikz":
+  editor:
+    preferredLineLength: 100
+".tex.text":
+  editor:
+    preferredLineLength: 100
+    softWrap: true
+    softWrapAtPreferredLineLength: true

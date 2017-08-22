@@ -48,3 +48,17 @@
   'cmd-k up': 'window:move-active-item-to-pane-above'
   'cmd-ctrl-,': 'pane:decrease-size'
   'cmd-ctrl-.': 'pane:increase-size'
+  'ctrl-shift-l': 'core:select-right'
+  'ctrl-shift-alt-l': 'editor:select-to-end-of-word'
+  'ctrl-alt-l': 'editor:move-to-end-of-word'
+  'ctrl-shift-cmd-l': 'editor:select-to-end-of-line'
+  'ctrl-cmd-l': 'editor:move-to-end-of-line'
+  'ctrl-shift-j': 'core:select-left'
+  'ctrl-shift-alt-j': 'editor:select-to-beginning-of-word'
+  'ctrl-alt-j': 'editor:move-to-beginning-of-word'
+  'ctrl-shift-cmd-j': 'editor:select-to-first-character-of-line'
+  'ctrl-cmd-j': 'editor:move-to-first-character-of-line'
+
+'atom-text-editor:not(.mini)':
+  'cmd-%': 'rails-snippets:toggleErb'
+  'shift-space': 'autocomplete-plus:activate'

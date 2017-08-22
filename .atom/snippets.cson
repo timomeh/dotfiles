@@ -35,3 +35,47 @@
   'Import':
     'prefix': 'import'
     'body': "import $1 from '${2:$1}'"
+  'react stateful component':
+    'prefix': 'reactful'
+    'body': '''
+      import React, { Component } from 'react'
+      import PropTypes from 'prop-types'
+      $2
+      export default class ${1:MyComponent} extends Component {
+        static defaultProps = {}
+        static propTypes = {}
+
+        state = {}
+
+        constructor(props) {
+          super(props)
+        }
+
+        render() {
+
+        }
+      }
+    '''
+  'react stateless component':
+    'prefix': 'reactless'
+    'body': '''
+      import React, { Component } from 'react'
+      import PropTypes from 'prop-types'
+      $2
+      const ${1:MyComponent} = ({$3}) => {
+        return (
+          $3
+        )
+      }
+
+      ${1:MyComponent}.propTypes = {
+
+      }
+
+      export default ${1:MyComponent}
+    '''
+
+'.source.erb':
+  '=':
+    'prefix': '='
+    'body': "<%= $1 %>$2"

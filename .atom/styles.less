@@ -3,14 +3,47 @@ atom-text-editor.editor .line-number {
   font-weight: 600;
 }
 
-.title-bar {
-  font-weight: 600;
-  color: rgba(255,255,255,.6);
+.title-bar .title {
+  opacity: 0;
+}
+
+.tab-bar {
+  margin-top: -40px;
+  margin-left: 0;
+
+  &.indented {
+    margin-left: 90px;
+  }
+}
+
+.tree-view {
+  .entry.selected {
+    &::before {
+      left: -100px;
+    }
+  }
+
+  .list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
+  .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+    padding-left: 16px;
+  }
+}
+
+atom-text-editor .gutter .line-number.cursor-line {
+  color: #E1BEE7;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+
+.atom-dock-toggle-button-visible {
+  display: none !important;
 }
 
 .modal.overlay {
-  // Make modal text bigger
-  font-size: 13px;
+  top: 100px !important;
+
+  box-shadow: 0 0 100rem rgba(0, 0, 0, 0.19), 0 0 10rem rgba(0, 0, 0, 0.23),  0 0 5rem rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
 
   // Fancy command palette error message
   .command-palette {
@@ -27,7 +60,6 @@ atom-text-editor.editor .line-number {
       display: block;
       font-size: 5em;
       margin: 10px 0 30px;
-      font-family: Roboto Mono;
       opacity: 0.3;
     }
 
