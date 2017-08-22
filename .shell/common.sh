@@ -24,6 +24,9 @@ export NVM_AUTO_USE=true
 export NVM_LAZY_LOAD=true
 export ENHANCD_DOT_ARG=.
 export ENHANCD_HYPHEN_ARG=--
+export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_SDK=~/Library/Android/sdk
+export ANDROID_NDK=~/Library/Android/ndk
 
 
 # ---------------------------------------------------------
