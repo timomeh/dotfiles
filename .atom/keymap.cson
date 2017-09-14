@@ -62,3 +62,4 @@
 'atom-text-editor:not(.mini)':
   'cmd-%': 'rails-snippets:toggleErb'
   'shift-space': 'autocomplete-plus:activate'
+  'alt-o': 'unset!'
