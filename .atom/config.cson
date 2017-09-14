@@ -47,7 +47,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Fira Mono"
-    fontSize: 15
     lineHeight: 1.8
     scrollPastEnd: true
     showIndentGuide: true
@@ -68,15 +67,18 @@
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-ui-default":
-    panelHeight: 163
+    panelHeight: 102
   "markdown-preview":
     useGitHubStyle: true
   minimap:
+    absoluteMode: true
     plugins:
       "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
   "nord-atom-ui": {}
   "one-dark-ui": {}
+  "one-vibrancy":
+    effect: "dark"
   "pristine-ui":
     hideDockButtons: true
   "spell-check":
@@ -92,7 +94,8 @@
       "en-US"
       "de-DE"
     ]
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode-plus":
     startInInsertMode: true
   welcome:

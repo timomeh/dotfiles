@@ -10,10 +10,10 @@ atom-text-editor.editor .line-number {
 body:not(.fullscreen) .tab-bar {
   margin-top: -40px;
   margin-left: 0;
+}
 
-  &.indented {
-    margin-left: 90px;
-  }
+.tab-bar-indented .tab-bar {
+  margin-left: 90px !important;
 }
 
 .tree-view {
@@ -128,4 +128,85 @@ atom-text-editor .gutter .line-number.cursor-line {
       content: "(¬ ʖ̯¬)";
     }
   }
+}
+
+// vibrancy
+atom-panel-container.header {
+  background-color: transparent !important;
+}
+
+atom-panel-container.footer {
+  background-color: rgba(40, 44, 52, 0.6) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.tab-bar {
+  background-color: rgba(40, 44, 52, 0) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+
+  .tab {
+    margin-top: -1px;
+
+    &.active {
+      background-color: rgba(40, 44, 52, 0.6) !important;
+    }
+  }
+}
+
+.title-bar {
+  background-color: rgba(40, 44, 52, 0.6) !important;
+
+  .fullscreen & {
+    background-color: #AF0C56 !important;
+  }
+
+  .tab-bar-indented & {
+    background-color: #AF0C56 !important;
+  }
+}
+
+.vertical .panes .tab-bar > .tab {
+  border-left: 1px solid transparent !important;
+  border-right: 1px solid transparent !important;
+
+  &.active {
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+
+    &::after {
+      background-color: #AF0C56 !important;
+    }
+  }
+}
+
+.tool-panel.panel-bottom {
+  background-color: rgba(40, 44, 52, 1) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+atom-pane-container atom-pane {
+  background-color: rgba(40, 44, 52, 0.6);
+}
+
+atom-workspace-axis.vertical > .panes {
+  background-color: rgba(40, 44, 52, 1);
+
+  .item-views {
+    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+.tree-view:focus .selected  {
+  &::before {
+    background-color: rgba(111, 8, 56, 0.9) !important;
+  }
+
+  .list-item::before {
+    background-color: transparent !important;
+  }
+}
+
+atom-pane-container atom-pane-axis.horizontal > * {
+  border-right: none !important;
 }

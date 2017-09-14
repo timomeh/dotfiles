@@ -21,8 +21,8 @@ const leftDock = atom.workspace.getLeftDock()
 const handleDockVisibleChange = (visible) => onDockVisibleChange(visible)
 const onDockVisibleChange = ({ visible }) => {
   visible
-    ? tabBar.classList.remove("indented")
-    : tabBar.classList.add("indented")
+    ? document.body.classList.remove("tab-bar-indented")
+    : document.body.classList.add("tab-bar-indented")
 }
 const leftDockOldShow = leftDock.show
 const leftDockOldHide = leftDock.hide
