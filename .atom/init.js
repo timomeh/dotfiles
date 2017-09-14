@@ -29,4 +29,4 @@ const leftDockOldHide = leftDock.hide
 leftDock.show = function () { leftDockOldShow.apply(this, arguments); handleDockVisibleChange({ visible: this.state.visible }); }
 leftDock.hide = function () { leftDockOldHide.apply(this, arguments); handleDockVisibleChange({ visible: this.state.visible }); }
 
-leftDock.isVisible() ? tabBar.classList.remove("indented") : tabBar.classList.add("indented")
+leftDock.isVisible() ? document.body.classList.remove("tab-bar-indented") : document.body.classList.add("tab-bar-indented")

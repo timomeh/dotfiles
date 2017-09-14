@@ -146,11 +146,11 @@ atom-panel-container.footer {
 
   .tab {
     margin-top: -1px;
-
-    &.active {
-      background-color: rgba(40, 44, 52, 0.6) !important;
-    }
   }
+}
+
+body:not(.fullscreen) .tab-bar .tab.active {
+  background-color: rgba(40, 44, 52, 0.6) !important;
 }
 
 .title-bar {
@@ -197,9 +197,29 @@ atom-workspace-axis.vertical > .panes {
   }
 }
 
-.tree-view:focus .selected  {
+.tree-view:focus .selected {
   &::before {
-    background-color: rgba(111, 8, 56, 0.9) !important;
+    background-color: #AF0C56 !important;
+  }
+
+  &.status-added {
+    & > .name, & > .header .name, & > .header::before {
+      color: white !important;
+    }
+
+    &::before {
+      background-color: #8BC34A !important;
+    }
+  }
+
+  &.status-modified {
+    & > .name, & > .header .name, & > .header::before {
+      color: #000000 !important;
+    }
+
+    &::before {
+      background-color: #FECA27 !important;
+    }
   }
 
   .list-item::before {
