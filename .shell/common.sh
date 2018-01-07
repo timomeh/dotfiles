@@ -8,16 +8,7 @@ eval $(thefuck --alias)
 
 
 # ---------------------------------------------------------
-# PATH
-# ---------------------------------------------------------
-
-export PATH=${PATH}:~/bin
-export PATH=${PATH}:~/.yarn/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-
-# ---------------------------------------------------------
-# Other Exports
+# Exports
 # ---------------------------------------------------------
 
 export NVM_AUTO_USE=true
@@ -30,6 +21,17 @@ export ANDROID_NDK=~/Library/Android/ndk
 
 
 # ---------------------------------------------------------
+# PATH
+# ---------------------------------------------------------
+
+export PATH=$PATH:~/bin # Misc bins
+export PATH=$PATH:~/.yarn/bin # Yarn
+export PATH=$PATH:~/.rbenv/bin # rbenv
+export PATH=$PATH:$ANDROID_HOME/tools # Android Tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools # Android Platform Tools
+
+
+# ---------------------------------------------------------
 # Aliases
 # ---------------------------------------------------------
 
@@ -37,6 +39,16 @@ alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias d="docker"
+
+
+# ---------------------------------------------------------
+# Functions
+# ---------------------------------------------------------
+
+function emulator() {
+  cd ~/Library/Android/sdk/emulator
+  $ANDROID_HOME/tools/emulator "$@"
+}
 
 
 # ---------------------------------------------------------
