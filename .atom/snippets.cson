@@ -38,18 +38,14 @@
   'react stateful component':
     'prefix': 'reactful'
     'body': '''
-      import React, { Component } from 'react'
+      import React from 'react'
       import PropTypes from 'prop-types'
       $2
-      export default class ${1:MyComponent} extends Component {
+      export default class ${1:MyComponent} extends React.PureComponent {
         static defaultProps = {}
         static propTypes = {}
 
         state = {}
-
-        constructor(props) {
-          super(props)
-        }
 
         render() {
 
@@ -59,7 +55,7 @@
   'react stateless component':
     'prefix': 'reactless'
     'body': '''
-      import React, { Component } from 'react'
+      import React from 'react'
       import PropTypes from 'prop-types'
       $2
       const ${1:MyComponent} = ({$3}) => {

@@ -3,27 +3,8 @@ atom-text-editor.editor .line-number {
   font-weight: 600;
 }
 
-.title-bar .title {
-  opacity: 0;
-}
-
-body:not(.fullscreen) .tab-bar {
-  margin-top: -40px;
-  margin-left: 0;
-}
-
-.tab-bar-indented .tab-bar {
-  margin-left: 90px !important;
-}
-
-.tab-bar .tab .title {
-  position: relative;
-  top: 2px;
-  transition: transform 130ms;
-}
-
-.tab-bar .tab.active .title {
-  transform: translateY(-1px);
+atom-dock.left .tab-bar {
+  display: none;
 }
 
 .tree-view {
@@ -50,11 +31,6 @@ atom-text-editor .gutter .line-number.cursor-line {
 }
 
 .modal.overlay {
-  top: 100px !important;
-
-  box-shadow: 0 0 100rem rgba(0, 0, 0, 0.19), 0 0 10rem rgba(0, 0, 0, 0.23),  0 0 5rem rgba(0, 0, 0, 0.4);
-  border-radius: 3px;
-
   // Fancy command palette error message
   .command-palette {
 
@@ -140,93 +116,7 @@ atom-text-editor .gutter .line-number.cursor-line {
   }
 }
 
-// vibrancy
-atom-panel-container.header {
-  background-color: transparent !important;
-}
-
-atom-panel-container.footer {
-  background-color: rgba(40, 44, 52, 0.6) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.tab-bar {
-  background-color: rgba(40, 44, 52, 0) !important;
-
-  body:not(.tab-bar-indented) & {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  }
-
-  .tab {
-    margin-top: -1px;
-  }
-}
-
-body:not(.fullscreen) .tab-bar .tab.active {
-  background-color: rgba(40, 44, 52, 0.6) !important;
-}
-
-.title-bar {
-  background-color: rgba(40, 44, 52, 0.6) !important;
-
-  body.tab-bar-indented & {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  }
-}
-
-.vertical .panes .tab-bar > .tab {
-  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
-  margin-right: -1px;
-
-  &.active {
-
-    &::after {
-      background-color: #AF0C56 !important;
-    }
-  }
-}
-
-.tool-panel.panel-bottom {
-  background-color: rgba(40, 44, 52, 1) !important;
-  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-atom-pane-container atom-pane {
-  background-color: rgba(40, 44, 52, 0.6);
-}
-
-atom-workspace-axis.vertical > .panes {
-  background-color: rgba(40, 44, 52, 1);
-
-  .item-views {
-    border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
-  }
-}
-
-.tree-view {
-  color: white;
-}
-
-.panes atom-pane-axis.vertical .pane:not(:first-of-type) {
-  .tab-bar {
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    background-color: rgba(40, 44, 52, 1) !important;
-  }
-}
-
-.list-tree > .entry:not(.status-modified) {
-  & > .header .name, & > .header::before {
-    color: rgba(222, 223, 226, 0.6);
-  }
-}
-
 .tree-view:focus .selected {
-  &::before {
-    background-color: #AF0C56 !important;
-  }
-
   &.status-added {
     & > .name, & > .header .name, & > .header::before {
       color: white !important;
@@ -250,8 +140,4 @@ atom-workspace-axis.vertical > .panes {
   .list-item::before {
     background-color: transparent !important;
   }
-}
-
-atom-pane-container atom-pane-axis.horizontal > * {
-  border-right: none !important;
 }

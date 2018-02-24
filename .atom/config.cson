@@ -4,16 +4,15 @@
     preview_after_build: "Do nothing"
   "atom-material-ui":
     colors:
-      abaseColor: "#af0c56"
+      paintCursor: true
     fonts: {}
-    tabs:
-      compactTabs: true
-      tintedTabBar: true
+    tabs: {}
     treeView:
       compactList: true
     ui: {}
   "atom-package-deps":
     ignored: []
+  "atom-ternjs": {}
   "autocomplete-plus":
     scopeBlacklist: [
       ".source.narrow"
@@ -33,11 +32,11 @@
     disabledPackages: [
       "emmet"
       "minimap-autohide"
-      "docblockr"
     ]
     packagesWithKeymapsDisabled: [
       "rails-snippets"
     ]
+    projectHome: "/Users/timo/dev"
     restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
@@ -47,7 +46,9 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Fira Mono"
+    fontSize: 15
     lineHeight: 1.8
+    preferredLineLength: 80
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
@@ -64,6 +65,7 @@
     commits:
       verboseCommits: true
   jumpy: {}
+  linter: {}
   "linter-js-standard":
     checkStyleDevDependencies: true
   "linter-ui-default":
@@ -74,12 +76,25 @@
     plugins:
       "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
+  mprettier:
+    formatOnSave: {}
   "nord-atom-ui": {}
   "one-dark-ui": {}
   "one-vibrancy":
     effect: "dark"
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+      isDisabledIfNotInPackageJson: true
+    prettierOptions:
+      semi: false
+      singleQuote: true
+    useEslint: true
   "pristine-ui":
     hideDockButtons: true
+  "react-function-to-class":
+    semicolons: false
   "spell-check":
     grammars: [
       "source.asciidoc"
@@ -93,8 +108,7 @@
       "en-US"
       "de-DE"
     ]
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
     startInInsertMode: true
   welcome:

@@ -20,6 +20,8 @@
 	cob = checkout -b
 	cof = checkout --
 
+	housekeeping = !"git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
+
 	# list aliases
 	wat = !"git config -l | grep alias | cut -c 7-"
 
