@@ -13,8 +13,6 @@ atom.commands.onDidDispatch(event => {
       .getView(atom.workspace)
       .querySelector('.command-palette')
     commandPalette.classList.remove(...faceNames)
-    commandPalette.classList.add(
-      `face-${Math.floor(Math.random() * (NUM_OF_FACES - 1) + 1)}`
-    )
+    commandPalette.classList.add(newRandomFace)
   }
 })
