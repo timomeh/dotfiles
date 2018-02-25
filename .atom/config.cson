@@ -46,6 +46,7 @@
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
+    undoGroupingInterval: 400
   emmet:
     extensionsPath: "~/.emmet"
   "emmet-atom-plugin":
@@ -60,7 +61,26 @@
       verboseCommits: true
     tags:
       signTags: true
-  jumpy: {}
+  jumpy:
+    customKeys: [
+      "j"
+      "f"
+      "k"
+      "d"
+      "l"
+      "s"
+      "a"
+      "n"
+      "v"
+      "m"
+      "c"
+      "i"
+      "e"
+      "o"
+      "w"
+      "p"
+      "q"
+    ]
   linter: {}
   "linter-js-standard":
     checkStyleDevDependencies: true
