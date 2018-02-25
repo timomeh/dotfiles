@@ -58,6 +58,8 @@
   "git-plus":
     commits:
       verboseCommits: true
+    tags:
+      signTags: true
   jumpy: {}
   linter: {}
   "linter-js-standard":
