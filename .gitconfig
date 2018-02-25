@@ -7,6 +7,9 @@
 	lg = !"git lg1"
 	l = !"git lg1"
 
+	ps = push
+	pl = pull
+
 	a = add
 	aa = add -A
 	c = commit --verbose
