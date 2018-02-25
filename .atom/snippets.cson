@@ -20,48 +20,35 @@
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
-'.source.js.jsx':
-  'Flow Comment':
-    'prefix': 'flow'
-    'body': '''
-      /**
-       * $1
-       * @flow
-       */
-
-      $2
-      '''
 '.source.js':
   'Import':
     'prefix': 'import'
     'body': "import $1 from '${2:$1}'"
-  'react stateful component':
+  'react class component':
     'prefix': 'reactful'
     'body': '''
       import React from 'react'
       import PropTypes from 'prop-types'
-      $2
+
       export default class ${1:MyComponent} extends React.PureComponent {
-        static defaultProps = {}
-        static propTypes = {}
-
-        state = {}
-
-        render() {
+        static propTypes = {
 
         }
+
+        render() {
+          return ${2:<div />}
+        }
       }
+
     '''
-  'react stateless component':
+  'react functional component':
     'prefix': 'reactless'
     'body': '''
       import React from 'react'
       import PropTypes from 'prop-types'
-      $2
-      const ${1:MyComponent} = ({$3}) => {
-        return (
-          $3
-        )
+
+      const ${1:MyComponent} = ${2:props} => {
+        return ${3:<div />}
       }
 
       ${1:MyComponent}.propTypes = {
@@ -69,9 +56,5 @@
       }
 
       export default ${1:MyComponent}
-    '''
 
-'.source.erb':
-  '=':
-    'prefix': '='
-    'body': "<%= $1 %>$2"
+    '''
