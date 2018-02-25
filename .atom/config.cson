@@ -1,7 +1,4 @@
 "*":
-  "atom-latex":
-    hide_log_if_success: true
-    preview_after_build: "Do nothing"
   "atom-material-ui":
     colors:
       paintCursor: true
@@ -32,9 +29,6 @@
     disabledPackages: [
       "emmet"
       "minimap-autohide"
-    ]
-    packagesWithKeymapsDisabled: [
-      "rails-snippets"
     ]
     projectHome: "/Users/timo/dev"
     restorePreviousWindowsOnStart: "no"
@@ -76,12 +70,7 @@
     plugins:
       "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
-  mprettier:
-    formatOnSave: {}
-  "nord-atom-ui": {}
   "one-dark-ui": {}
-  "one-vibrancy":
-    effect: "dark"
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
@@ -91,8 +80,6 @@
       semi: false
       singleQuote: true
     useEslint: true
-  "pristine-ui":
-    hideDockButtons: true
   "react-function-to-class":
     semicolons: false
   "spell-check":
@@ -113,28 +100,3 @@
     startInInsertMode: true
   welcome:
     showOnStartup: false
-".beamer.latex.tex.text":
-  editor:
-    preferredLineLength: 801
-".bibtex.text":
-  editor:
-    softWrap: false
-    softWrapAtPreferredLineLength: false
-".knitr.latex.tex.text":
-  editor:
-    preferredLineLength: 100
-".latex.memoir.tex.text":
-  editor:
-    preferredLineLength: 801
-".latex.tex.text":
-  editor:
-    preferredLineLength: 100
-    softWrapAtPreferredLineLength: true
-".latex.tex.text.tikz":
-  editor:
-    preferredLineLength: 100
-".tex.text":
-  editor:
-    preferredLineLength: 100
-    softWrap: true
-    softWrapAtPreferredLineLength: true

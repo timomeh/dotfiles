@@ -1,32 +1,20 @@
-const workspaceElement = atom.views.getView(atom.workspace)
-const tabBar = workspaceElement.querySelector(".tab-bar[location=center]")
-
+// Show random faces for "No matches found" in command palette,
+// each time the command palette opens.
+const NUM_OF_FACES = 16
 atom.commands.onDidDispatch(event => {
   if (event.type === 'command-palette:toggle') {
-    const commandPalette = workspaceElement.querySelector(".command-palette")
-    commandPalette.classList
-      .remove("face-1", "face-2", "face-3", "face-4", "face-5", "face-6", "face-7", "face-8", "face-9", "face-10", "face-11", "face-12", "face-13", "face-14", "face-15", "face-16")
-    commandPalette.classList
-      .add(`face-${Math.floor(Math.random() * (16 - 1) + 1)}`)
+    const faceNames = Array.from(Array(NUM_OF_FACES)).map(
+      (_, i) => `face-${i + 1}`
+    )
+    const random = Math.floor(Math.random() * (NUM_OF_FACES - 1) + 1)
+    const newRandomFace = faceNames[random]
+
+    const commandPalette = atom.views
+      .getView(atom.workspace)
+      .querySelector('.command-palette')
+    commandPalette.classList.remove(...faceNames)
+    commandPalette.classList.add(
+      `face-${Math.floor(Math.random() * (NUM_OF_FACES - 1) + 1)}`
+    )
   }
 })
-
-
-/***
- * toggle indented class on tabbar when left dock visibility changes
- */
-const leftDock = atom.workspace.getLeftDock()
-
-// Monkeypatch callback for show/hide dock
-const handleDockVisibleChange = (visible) => onDockVisibleChange(visible)
-const onDockVisibleChange = ({ visible }) => {
-  visible
-    ? document.body.classList.remove("tab-bar-indented")
-    : document.body.classList.add("tab-bar-indented")
-}
-const leftDockOldShow = leftDock.show
-const leftDockOldHide = leftDock.hide
-leftDock.show = function () { leftDockOldShow.apply(this, arguments); handleDockVisibleChange({ visible: this.state.visible }); }
-leftDock.hide = function () { leftDockOldHide.apply(this, arguments); handleDockVisibleChange({ visible: this.state.visible }); }
-
-leftDock.isVisible() ? document.body.classList.remove("tab-bar-indented") : document.body.classList.add("tab-bar-indented")
