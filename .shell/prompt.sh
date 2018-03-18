@@ -30,10 +30,10 @@ __prompt_git_status() {
   local GIT_PROMPT_MERGING="😨 "
   local GIT_PROMPT_REBASE="😰 "
   local GIT_PROMPT_DETACHED="🔥 "
-  local GIT_PROMPT_UNTRACKED="%{$p_red%}●%{$p_reset%}"
-  local GIT_PROMPT_MODIFIED="%{$p_yellow%}●%{$p_reset%}"
-  local GIT_PROMPT_STAGED="%{$p_cyan%}●%{$p_reset%}"
-  local GIT_PROMPT_GOOD="%{$p_green%}●%{$p_reset%}"
+  local GIT_PROMPT_UNTRACKED="%{$p_red%}❯%{$p_reset%}"
+  local GIT_PROMPT_MODIFIED="%{$p_yellow%}❯%{$p_reset%}"
+  local GIT_PROMPT_STAGED="%{$p_cyan%}❯%{$p_reset%}"
+  local GIT_PROMPT_GOOD="%{$p_green%}❯%{$p_reset%}"
 
   # Compose this value via multiple conditional appends.
   local GIT_STATE=""
@@ -94,7 +94,7 @@ __prompt_git_on() {
 }
 
 __prompt_last_status() {
-  PS1+="%(?.${p_yellow}▲.${p_red}▲)${p_reset}"
+  PS1+="%(?.${p_green}•.${p_red}•)${p_reset}"
 }
 
 __prompt_dir() {
