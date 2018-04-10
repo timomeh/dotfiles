@@ -1,3 +1,4 @@
+// Experimental and crappy code
 Key.on('i', ['ctrl', 'cmd'], function() {
   const typeKeys = ['j', 'k', 'l', 'f', 'd', 's', 'a', 'u', 'i', 'o', 'p', 't', 'r', 'e', 'w', 'q']
   let windowModals = {}
