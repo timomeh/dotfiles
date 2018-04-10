@@ -57,7 +57,8 @@
   'ctrl-shift-alt-j': 'editor:select-to-beginning-of-word'
   'ctrl-alt-j': 'editor:move-to-beginning-of-word'
   'ctrl-shift-cmd-j': 'editor:select-to-first-character-of-line'
-  'ctrl-cmd-j': 'editor:move-to-first-character-of-line'
+  'ctrl-cmd-j': 'editor:move-to-first-character-of-line',
+  'ctrl-cmd-o': 'project-manager:list-projects'
 
 'atom-text-editor:not(.mini)':
   'cmd-%': 'rails-snippets:toggleErb'
