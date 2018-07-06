@@ -29,7 +29,7 @@ It's just a Git Repo. But you can't clone into a directory with existing files, 
 
 2. Copy the working tree from the tmp directory into the home directory.
    ```sh
-   cp -r ~/dotfiles-tmp/* ~
+   cp -r ~/dotfiles-tmp/. ~
    ```
 
 3. Delete the tmp dotfiles directory.
