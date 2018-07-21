@@ -1,4 +1,6 @@
 "*":
+  Zen:
+    softWrap: true
   "atom-material-ui":
     colors:
       paintCursor: true
@@ -92,7 +94,7 @@
   "linter-rubocop":
     command: "/Users/timo/.rbenv/shims/rubocop"
   "linter-ui-default":
-    panelHeight: 282
+    panelHeight: 102
     showPanel: true
   "markdown-preview":
     useGitHubStyle: true
