@@ -112,12 +112,6 @@ module.exports = {
 
     hypercwd: {
       initialWorkingDirectory: '~/dev'
-    },
-    hyperTabs: {
-      tabIconsColored: true,
-      closeAlign: 'right',
-      trafficButtons: true,
-      border: true
     }
   },
 
@@ -129,9 +123,9 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hypercwd',
-    'hyperterm-tabs',
-    'hyper-tabs-enhanced',
-    'hyper-ayu'
+    'hyper-ayu',
+    'hyper-search',
+    'hyper-pane'
   ],
 
   // in development, you can create a directory under
