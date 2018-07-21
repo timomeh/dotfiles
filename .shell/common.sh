@@ -11,6 +11,8 @@ eval $(thefuck --alias)
 # Exports
 # ---------------------------------------------------------
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export NVM_AUTO_USE=true
 export NVM_LAZY_LOAD=true
 export ENHANCD_DOT_ARG=.
