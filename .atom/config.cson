@@ -40,7 +40,6 @@
     titleBar: "custom-inset"
   editor:
     fontFamily: "Fira Mono"
-    fontSize: 15
     lineHeight: 1.8
     preferredLineLength: 80
     scrollPastEnd: true
@@ -56,6 +55,8 @@
   "file-icons":
     coloured: false
     onChanges: true
+  "git-blame":
+    colorCommitAuthors: true
   "git-plus":
     commits:
       verboseCommits: true
@@ -81,11 +82,18 @@
       "p"
       "q"
     ]
-  linter: {}
+  linter:
+    disabledProviders: [
+      "RuboCop"
+      "ESLint"
+    ]
   "linter-js-standard":
     checkStyleDevDependencies: true
+  "linter-rubocop":
+    command: "/Users/timo/.rbenv/shims/rubocop"
   "linter-ui-default":
-    panelHeight: 102
+    panelHeight: 282
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   minimap:

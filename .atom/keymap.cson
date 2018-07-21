@@ -59,6 +59,9 @@
   'ctrl-shift-cmd-j': 'editor:select-to-first-character-of-line'
   'ctrl-cmd-j': 'editor:move-to-first-character-of-line',
   'ctrl-cmd-o': 'project-manager:list-projects'
+  'cmd-shift-s': 'git-plus:stage-files'
+  'cmd-shift-c': 'git-plus:commit'
+  'cmd-shift-a': 'git-plus:commit-amend'
 
 'atom-text-editor:not(.mini)':
   'cmd-%': 'rails-snippets:toggleErb'
