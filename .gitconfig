@@ -18,10 +18,14 @@
 	cam = commit -a -m
 	m = commit --amend --verbose
 
+	cdiff = "!f() { git diff "$1"^.."$1"; }; f"
+
 	s = status
+
 	co = checkout
 	cob = checkout -b
 	cof = checkout --
+	pr = "!f() { git fetch upstream "pull/$1/head" && git checkout FETCH_HEAD; }; f"
 
 	housekeeping = !"git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
 
@@ -31,9 +35,27 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = subl -n -w
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [pull]
 	rebase = true
 
 [push]
 	default = simple
+
+[color]
+	ui = true
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
