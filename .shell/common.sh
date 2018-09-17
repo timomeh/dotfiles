@@ -32,6 +32,7 @@ export PATH=$PATH:~/.yarn/bin # Yarn
 export PATH=$PATH:~/.rbenv/bin # rbenv
 export PATH=$PATH:$ANDROID_HOME/tools # Android Tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools # Android Platform Tools
+export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin # vs code
 
 
 # ---------------------------------------------------------
