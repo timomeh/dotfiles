@@ -29,6 +29,8 @@
 
 	housekeeping = !"git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
 
+	cdiff = "!f() { git diff $1^ $1; }; f"
+
 	# list aliases
 	wat = !"git config -l | grep alias | cut -c 7-"
 
@@ -42,6 +44,7 @@
 
 [push]
 	default = simple
+
 
 [color]
 	ui = true

@@ -24,6 +24,15 @@
   'Import':
     'prefix': 'import'
     'body': "import $1 from '${2:$1}'"
+
+  'Import React':
+    'prefix': 'importreact'
+    'body': "import React from 'react'"
+
+  'Import PropTypes':
+    'prefix': 'importpt'
+    'body': "import PropTypes from 'prop-types'"
+
   'react class component':
     'prefix': 'reactful'
     'body': '''
@@ -41,6 +50,7 @@
       }
 
     '''
+
   'react functional component':
     'prefix': 'reactless'
     'body': '''
