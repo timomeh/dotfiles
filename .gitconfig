@@ -36,7 +36,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = code --wait
+	editor = subl -n -w
 	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [pull]
@@ -48,6 +48,7 @@
 
 [color]
 	ui = true
+	ignorecase = false
 
 [color "diff-highlight"]
 	oldNormal = red bold
