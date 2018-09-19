@@ -3,7 +3,10 @@
     softWrap: true
   "atom-material-ui":
     colors:
+      abaseColor: "#ffa726"
+      accentColor: "#9f6918"
       paintCursor: true
+      predefinedColor: "Orange"
     fonts: {}
     tabs: {}
     treeView:
@@ -33,7 +36,6 @@
       "minimap-autohide"
     ]
     projectHome: "/Users/timo/dev"
-    restorePreviousWindowsOnStart: "no"
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
@@ -45,7 +47,6 @@
     lineHeight: 1.8
     preferredLineLength: 80
     scrollPastEnd: true
-    showIndentGuide: true
     showInvisibles: true
     undoGroupingInterval: 400
   emmet:
@@ -95,7 +96,6 @@
     command: "/Users/timo/.rbenv/shims/rubocop"
   "linter-ui-default":
     panelHeight: 102
-    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   minimap:
