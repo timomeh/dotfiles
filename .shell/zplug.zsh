@@ -13,7 +13,7 @@ source "$ZPLUG_HOME/init.zsh"
 # alias-tips
 # An oh-my-zsh plugin to help remembering those aliases you defined once
 # https://github.com/djui/alias-tips
-zplug "djui/alias-tips"
+# zplug "djui/alias-tips"
 
 
 # enhancd
@@ -37,7 +37,7 @@ zplug "MikeDacre/cdbk"
 # zsh-nvm
 # Zsh plugin for installing, updating and loading nvm
 # https://github.com/lukechilds/zsh-nvm
-zplug "lukechilds/zsh-nvm", defer:1
+# zplug "lukechilds/zsh-nvm"
 
 
 # zsh-completions

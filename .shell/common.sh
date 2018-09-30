@@ -6,6 +6,11 @@ source "$HOME/.shell/prompt.sh"
 eval "$(rbenv init -)"
 eval $(thefuck --alias)
 
+# nvm
+
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 
 # ---------------------------------------------------------
 # Exports
@@ -44,16 +49,6 @@ alias dokku="bash $HOME/.dokku/contrib/dokku_client.sh"
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias d="docker"
 alias pping='prettyping --nolegend'
-
-
-# ---------------------------------------------------------
-# Functions
-# ---------------------------------------------------------
-
-function emulator() {
-  cd ~/Library/Android/sdk/emulator
-  $ANDROID_HOME/tools/emulator "$@"
-}
 
 
 # ---------------------------------------------------------
