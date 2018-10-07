@@ -11,5 +11,5 @@ source "${HOME}/.shell/common.sh"
 source "${HOME}/.shell/zplug.zsh"
 source "${HOME}/.shell/config.zsh"
 
-# added by travis gem
-[ -f /Users/timo/.travis/travis.sh ] && source /Users/timo/.travis/travis.sh
+# travis gem
+(test -e "${HOME}/.travis/travis.zsh" && source /Users/timo/.travis/travis.sh) || true

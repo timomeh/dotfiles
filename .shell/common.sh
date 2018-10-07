@@ -1,15 +1,7 @@
 #!/usr/bin/env bash
 
-
-source "$HOME/.shell/prompt.sh"
-
 eval "$(rbenv init -)"
 eval $(thefuck --alias)
-
-# nvm
-
-export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 
 # ---------------------------------------------------------
@@ -18,8 +10,8 @@ export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export NVM_AUTO_USE=true
-export NVM_LAZY_LOAD=false
+export NVM_AUTO_USE=false
+export NVM_LAZY_LOAD=true
 export ENHANCD_DOT_ARG=.
 export ENHANCD_HYPHEN_ARG=--
 export ANDROID_HOME=~/Library/Android/sdk

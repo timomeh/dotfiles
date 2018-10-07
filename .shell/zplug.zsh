@@ -9,11 +9,25 @@ fi
 
 source "$ZPLUG_HOME/init.zsh"
 
+# zsh-async
+# run async jobs in zsh (useful for fast prompts)
+zplug "mafredri/zsh-async"
+
+
+# nigiri
+# My zsh theme
+zplug "~/dev/nigiri", from:local, as:theme
+
+
+# zsh-nvm
+# plugin for installing, updating and loading nvm
+zplug "lukechilds/zsh-nvm"
+
 
 # alias-tips
 # An oh-my-zsh plugin to help remembering those aliases you defined once
 # https://github.com/djui/alias-tips
-# zplug "djui/alias-tips"
+zplug "djui/alias-tips", defer:3
 
 
 # enhancd
@@ -37,7 +51,7 @@ zplug "MikeDacre/cdbk"
 # zsh-nvm
 # Zsh plugin for installing, updating and loading nvm
 # https://github.com/lukechilds/zsh-nvm
-# zplug "lukechilds/zsh-nvm"
+zplug "lukechilds/zsh-nvm"
 
 
 # zsh-completions
