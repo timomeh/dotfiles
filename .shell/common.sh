@@ -31,6 +31,19 @@ export PATH=$PATH:$ANDROID_HOME/tools # Android Tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools # Android Platform Tools
 export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin # vs code
 
+# ---------------------------------------------------------
+# nigiri prompt
+# ---------------------------------------------------------
+
+NIGIRI_PROMPT_MODULES=(
+  newline
+  cwd
+  git
+  node
+  wild_nigiri
+  newline
+  exit_status
+)
 
 # ---------------------------------------------------------
 # Aliases
