@@ -34,6 +34,7 @@
     disabledPackages: [
       "emmet"
       "minimap-autohide"
+      "spell-check"
     ]
     projectHome: "/Users/timo/dev"
     telemetryConsent: "limited"
@@ -115,14 +116,6 @@
   "react-function-to-class":
     semicolons: false
   "spell-check":
-    grammars: [
-      "source.asciidoc"
-      "source.gfm"
-      "text.git-commit"
-      "text.plain"
-      "text.plain.null-grammar"
-      "text.tex.latex"
-    ]
     locales: [
       "en-US"
       "de-DE"
