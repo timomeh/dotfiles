@@ -46,7 +46,6 @@ zstyle ':completion:*:manuals' separate-sections true
 
 zstyle :compinstall filename "$HOME/.zshrc"
 
-
 # ---------------------------------------------------------
 # Options
 # ---------------------------------------------------------

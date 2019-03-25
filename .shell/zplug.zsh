@@ -19,11 +19,6 @@ zplug "mafredri/zsh-async"
 zplug "~/dev/nigiri", from:local, as:theme
 
 
-# zsh-nvm
-# plugin for installing, updating and loading nvm
-zplug "lukechilds/zsh-nvm"
-
-
 # alias-tips
 # An oh-my-zsh plugin to help remembering those aliases you defined once
 # https://github.com/djui/alias-tips
@@ -73,11 +68,9 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+if ! zplug check; then
+	printf "Updating zsh plugins..."
+    zplug install
 fi
 
 
