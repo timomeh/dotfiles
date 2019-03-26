@@ -13,8 +13,14 @@
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(~/.zsh/completion $fpath)
 
-autoload -U compinit
-compinit
+# do compinit only once a day
+autoload -Uz compinit
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+
 zmodload -i zsh/complist
 
 setopt always_to_end      # jump to end when completing

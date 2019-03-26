@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
-eval "$(rbenv init -)"
-eval $(thefuck --alias)
+rbenv() {
+  eval "$(command rbenv init -)"
+  rbenv "$@"
+}
+
+fuck() {
+  eval $(command thefuck --alias)
+  fuck "$@"
+}
 
 
 # ---------------------------------------------------------
@@ -20,7 +27,7 @@ export ANDROID_NDK=~/Library/Android/ndk
 export DOKKU_HOST=apps.railslabs.com
 
 if [ "$TERM_PROGRAM" = "Hyper" ]; then
-	export NVM_LAZY_LOAD=true
+  export NVM_LAZY_LOAD=true
 fi
 
 

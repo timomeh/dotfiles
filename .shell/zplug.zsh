@@ -1,12 +1,6 @@
 #!/usr/bin/env zsh
 
 export ZPLUG_HOME=/usr/local/opt/zplug
-
-if [ ! -f "$ZPLUG_HOME/init.zsh" ]; then
-  echo 'Error: `zplug` is not installed.'
-  return
-fi
-
 source "$ZPLUG_HOME/init.zsh"
 
 # zsh-async
