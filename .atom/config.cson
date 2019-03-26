@@ -35,6 +35,7 @@
       "emmet"
       "minimap-autohide"
       "spell-check"
+      "touch-slide"
     ]
     projectHome: "/Users/timo/dev"
     telemetryConsent: "limited"
@@ -43,6 +44,7 @@
       "one-dark-syntax"
     ]
     titleBar: "custom-inset"
+    useTreeSitterParsers: false
   editor:
     fontFamily: "Fira Mono"
     lineHeight: 1.8
