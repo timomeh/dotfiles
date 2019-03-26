@@ -173,7 +173,8 @@ module.exports = {
     'hyper-statusline',
     'hyper-pane',
     'hyperlayout',
-    'hyper-search'
+    'hyper-search',
+    'hyperterm-summon'
   ],
 
   // in development, you can create a directory under
