@@ -33,6 +33,10 @@
     'prefix': 'importpt'
     'body': "import PropTypes from 'prop-types'"
 
+  'jsx pragma':
+    'prefix': 'prag'
+    'body': '/** @jsx ${1:jsx} */'
+
   'react class component':
     'prefix': 'reactful'
     'body': '''
@@ -52,19 +56,14 @@
     '''
 
   'react functional component':
-    'prefix': 'reactless'
+    'prefix': 'cmp'
     'body': '''
       import React from 'react'
-      import PropTypes from 'prop-types'
 
-      const ${1:MyComponent} = ${2:props} => {
+      function ${1:SomeComponent}(${2:props}) {
         return ${3:<div />}
       }
 
-      ${1:MyComponent}.propTypes = {
-
-      }
-
-      export default ${1:MyComponent}
+      export default ${1:SomeComponent}
 
     '''
