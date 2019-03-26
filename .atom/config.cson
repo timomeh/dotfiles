@@ -3,8 +3,8 @@
     softWrap: true
   "atom-material-ui":
     colors:
-      abaseColor: "#ffa726"
-      accentColor: "#9f6918"
+      abaseColor: "#f9f9f9"
+      accentColor: "#06d6a0"
       paintCursor: true
       predefinedColor: "Orange"
     fonts: {}
@@ -46,7 +46,7 @@
     telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
-      "one-dark-syntax"
+      "one-meh-dark-syntax"
     ]
     titleBar: "custom-inset"
     useTreeSitterParsers: false

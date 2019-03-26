@@ -1,16 +1,39 @@
+// syntax font is natively a bit too thin
 atom-workspace {
   font-weight: 500;
 }
 
+// line number font
 atom-text-editor.editor .line-number {
   font-family: PT Mono;
   font-weight: 800;
 }
 
+// make active line number pop
+atom-text-editor .gutter .line-number.cursor-line {
+  opacity: 1;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+// remove 'projects' title bar header
 atom-dock.left .tab-bar {
   display: none;
 }
 
+// shadow to tree view
+atom-dock.left::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  background: linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+  z-index: 10;
+}
+
+// better indent guides
 .indent-guide-improved {
   background-color: rgba(255, 255, 255, 0.03);
   width: 2px;
@@ -24,33 +47,69 @@ atom-dock.left .tab-bar {
   }
 }
 
+// make tree view items taller
 .tree-view {
   .entry.selected {
     &::before {
-      left: -100px;
+      height: 28px + 4px;
+      margin-top: -2px;
     }
   }
 
+  .entry {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+
+// less indent tree view
+.tree-view {
   .list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
   .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
     padding-left: 16px;
   }
 }
 
-atom-text-editor .gutter .line-number.cursor-line {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.16);
-}
-
-
+// no no pls no dock buttons
 .atom-dock-toggle-button-visible {
   display: none !important;
 }
 
+// nonboring command palette error message
 .modal.overlay {
-  // Fancy command palette error message
-  .command-palette {
+  @faces:
+    "(>_<)",
+    "\\(^Д^)/",
+    "(≥o≤)",
+    "(^_^)b",
+    "(·_·)",
+    "\\(o_o)/",
+    "(^-^*)",
+    "(o^^)o",
+    "(˚Δ˚)b",
+    "(ง'-')ง",
+    "(¬_¬)",
+    "(◕ᗝ◕)",
+    "(ง'̀-'́)ง",
+    "ʕ•ᴥ•ʔ",
+    "(¬ ʖ̯¬)",
+    "(ಥ﹏ಥ)",
+    "(☞ﾟ∀ﾟ)☞",
+    "ლ(ಠ益ಠლ)",
+    "\\ (•◡•) /",
+    "ᕙ(⇀‸↼‶)ᕗ",
+    "☜(˚▽˚)☞",
+    "ლ(´ڡ`ლ)",
+    "(>ლ)",
+    "(/) (°,,°) (/)",
+    "ʕノ•ᴥ•ʔノ",
+    "(╥﹏╥)",
+    "ψ(｀∇´)ψ",
+    "ᕙ(`▽´)ᕗ",
+    "t(ಠ益ಠt)",
+    "[¬º-°]¬";
 
+  .command-palette {
     .editor.mini + span {
       display: block;
       text-align: center;
@@ -59,102 +118,22 @@ atom-text-editor .gutter .line-number.cursor-line {
     }
 
     .editor.mini + span::after {
-      content: "(>_<)";
+      content: extract(@faces, 1);
       display: block;
       font-size: 5em;
-      margin: 10px 0 30px;
+      margin: 30px 0 30px;
       opacity: 0.3;
     }
 
-    // Random emotes
-    &.face-1 .editor.mini + span::after {
-      content: "(>_<)";
+    // loops in less are fucked up. does this look like a loop? no. it doesn't.
+    .faceloop(@i: length(@faces)) when (@i > 0) {
+      @face: extract(@faces, @i);
+      &.face-@{i} .editor.mini + span::after {
+        content: @face;
+      }
+      .faceloop((@i - 1));
     }
 
-    &.face-2 .editor.mini + span::after {
-      content: "\\(^Д^)/";
-    }
-
-    &.face-3 .editor.mini + span::after {
-      content: "(≥o≤)";
-    }
-
-    &.face-4 .editor.mini + span::after {
-      content: "(^_^)b";
-    }
-
-    &.face-5 .editor.mini + span::after {
-      content: "(·_·)";
-    }
-
-    &.face-6 .editor.mini + span::after {
-      content: "(;-;)";
-    }
-
-    &.face-7 .editor.mini + span::after {
-      content: "(='X'=)";
-    }
-
-    &.face-8 .editor.mini + span::after {
-      content: "\\(o_o)/";
-    }
-
-    &.face-9 .editor.mini + span::after {
-      content: "(·.·)";
-    }
-
-    &.face-10 .editor.mini + span::after {
-      content: "(^-^*)";
-    }
-
-    &.face-11 .editor.mini + span::after {
-      content: "(o^^)o";
-    }
-
-    &.face-12 .editor.mini + span::after {
-      content: "(˚Δ˚)b";
-    }
-
-    &.face-13 .editor.mini + span::after {
-      content: "(ง'-')ง";
-    }
-
-    &.face-14 .editor.mini + span::after {
-      content: "(¬_¬)";
-    }
-
-    &.face-15 .editor.mini + span::after {
-      content: "(◕ᗝ◕)";
-    }
-
-    &.face-16 .editor.mini + span::after {
-      content: "(¬ ʖ̯¬)";
-    }
-  }
-}
-
-.tree-view:focus .selected {
-  &.status-added {
-    & > .name, & > .header .name, & > .header::before {
-      color: white !important;
-    }
-
-    &::before {
-      background-color: #8BC34A !important;
-    }
-  }
-
-  &.status-modified {
-    & > .name, & > .header .name, & > .header::before {
-      color: #000000 !important;
-    }
-
-    &::before {
-      background-color: #FECA27 !important;
-    }
-  }
-
-  .list-item::before {
-    background-color: transparent !important;
+    .faceloop;
   }
 }
