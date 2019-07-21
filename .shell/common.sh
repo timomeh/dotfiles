@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
-rbenv() {
-  eval "$(command rbenv init -)"
-  rbenv "$@"
-}
+# rbenv() {
+#   eval "$(command rbenv init -)"
+#   rbenv "$@"
+# }
 
 fuck() {
   eval $(command thefuck --alias)
   fuck "$@"
 }
+
+eval "$(command rbenv init -)"
 
 
 # ---------------------------------------------------------
@@ -40,6 +42,7 @@ export PATH=$PATH:~/.yarn/bin # Yarn
 export PATH=$PATH:~/.rbenv/bin # rbenv
 export PATH=$PATH:$ANDROID_HOME/tools # Android Tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools # Android Platform Tools
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/11/bin/ # Postgres bins
 
 # ---------------------------------------------------------
 # nigiri prompt
