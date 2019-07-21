@@ -52,7 +52,19 @@ module.exports = {
     borderColor: '#333',
 
     // custom CSS to embed in the main window
-    css: '',
+    css: `
+      .splitpane_divider {
+        background-color: rgba(0,0,0,0.3) !important;
+      }
+
+      .xterm-viewport::-webkit-scrollbar-thumb {
+        background-color: rgba(255,255,255,0.05);
+      }
+
+      .xterm-viewport::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255,255,255,0.15);
+      }
+    `,
 
     // custom CSS to embed in the terminal window
     termCSS: '',
@@ -67,7 +79,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '12px 22px',
+    padding: '12px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -149,12 +161,25 @@ module.exports = {
     },
 
     paneNavigation: {
+      inactivePaneOpacity: 0.6,
       indicatorStyle: {
         position: 'absolute',
-        left: 20,
-        top: 0,
+        right: 20,
+        top: 15,
+        zIndex: 2,
         fontSize: '11px',
         opacity: 0.4
+      },
+      hotkeys: {
+        navigation: {
+          up: 'ctrl+alt+i',
+          down: 'ctrl+alt+k',
+          left: 'ctrl+alt+j',
+          right: 'ctrl+alt+l'
+        },
+        jump_prefix: 'ctrl+alt', // completed with 1-9 digits
+        permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
+        maximize: 'meta+enter'
       }
     }
   },
