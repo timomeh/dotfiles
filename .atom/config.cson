@@ -3,15 +3,17 @@
     softWrap: true
   "atom-material-ui":
     colors:
-      abaseColor: "#f9f9f9"
-      accentColor: "#06d6a0"
+      abaseColor: "#2196f3"
       paintCursor: true
-      predefinedColor: "Orange"
+      predefinedColor: "Blue"
     fonts: {}
-    tabs: {}
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
     treeView:
       compactList: true
-    ui: {}
+    ui:
+      panelContrast: true
   "atom-package-deps":
     ignored: []
   "atom-ternjs": {}
@@ -41,6 +43,7 @@
       "minimap-autohide"
       "spell-check"
       "touch-slide"
+      "js-hyperclick"
     ]
     projectHome: "/Users/timo/dev"
     telemetryConsent: "limited"
@@ -66,6 +69,9 @@
   "file-icons":
     coloured: false
     onChanges: true
+  "fuzzy-finder":
+    scoringSystem: "fast"
+    useRipGrep: true
   "git-blame":
     colorCommitAuthors: true
   "git-plus":
@@ -111,6 +117,15 @@
       "minimap-autohide": false
       "minimap-autohideDecorationsZIndex": 0
   "one-dark-ui": {}
+  pigments:
+    autocompleteScopes: [
+      ".source.css"
+      ".source.css.less"
+      ".source.sass"
+      ".source.css.scss"
+      ".source.stylus"
+      ".source.js"
+    ]
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
@@ -120,6 +135,8 @@
       semi: false
       singleQuote: true
     useEslint: true
+  "project-manager": {}
+  "project-plus": {}
   "react-function-to-class":
     semicolons: false
   "spell-check":

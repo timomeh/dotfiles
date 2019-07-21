@@ -59,10 +59,13 @@
     'prefix': 'cmp'
     'body': '''
       import React from 'react'
+      import PropTypes from 'prop-types'
 
       function ${1:SomeComponent}(${2:props}) {
         return ${3:<div />}
       }
+
+      ${1:SomeComponent}.propTypes = {}
 
       export default ${1:SomeComponent}
 

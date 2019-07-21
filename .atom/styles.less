@@ -1,3 +1,5 @@
+@import "ui-variables";
+
 // syntax font is natively a bit too thin
 atom-workspace {
   font-weight: 500;
@@ -16,27 +18,24 @@ atom-text-editor .gutter .line-number.cursor-line {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-// remove 'projects' title bar header
-atom-dock.left .tab-bar {
-  display: none;
+// fix styles for no title bar
+.no-title-bar:not(.fullscreen).custom-inset-title-bar > atom-workspace atom-panel-container.left {
+  margin-top: 0 !important;
 }
 
-// shadow to tree view
-atom-dock.left::before {
-  content: '';
-  position: absolute;
-  top: -50px;
-  bottom: 0;
-  right: 0;
-  width: 10px;
-  background: linear-gradient(to left, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
-  z-index: 10;
+.no-title-bar:not(.fullscreen) atom-dock.left .tab-bar .title {
+  color: transparent;
+}
+
+.custom-inset-title-bar atom-panel.modal {
+  top: 40px;
 }
 
 // better indent guides
 .indent-guide-improved {
   background-color: rgba(255, 255, 255, 0.03);
   width: 2px;
+  transition: background-color 160ms;
 
   &.indent-guide-stack {
     background-color: rgba(255, 255, 255, 0.06);
