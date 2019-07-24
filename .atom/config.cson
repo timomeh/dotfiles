@@ -9,7 +9,6 @@
     fonts: {}
     tabs:
       compactTabs: true
-      tintedTabBar: true
     treeView:
       compactList: true
     ui:
