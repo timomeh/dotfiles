@@ -26,7 +26,7 @@ export ENHANCD_HYPHEN_ARG=--
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK=~/Library/Android/sdk
 export ANDROID_NDK=~/Library/Android/ndk
-export DOKKU_HOST=apps.railslabs.com
+export DOKKU_HOST=dokku.railslabs.com
 
 if [ "$TERM_PROGRAM" = "Hyper" ]; then
   export NVM_LAZY_LOAD=true
