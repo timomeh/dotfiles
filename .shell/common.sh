@@ -20,16 +20,17 @@ eval "$(command rbenv init -)"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export NVM_AUTO_USE=false
-export NVM_LAZY_LOAD=false
+export NVM_LAZY_LOAD=true
 export ENHANCD_DOT_ARG=.
 export ENHANCD_HYPHEN_ARG=--
 export ANDROID_HOME=~/Library/Android/sdk
 export ANDROID_SDK=~/Library/Android/sdk
 export ANDROID_NDK=~/Library/Android/ndk
 export DOKKU_HOST=dokku.railslabs.com
+export LESS="-F -g -i -M -R -S -w -X -z-4"
 
-if [ "$TERM_PROGRAM" = "Hyper" ]; then
-  export NVM_LAZY_LOAD=true
+if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
+  export NVM_LAZY_LOAD=false
 fi
 
 
