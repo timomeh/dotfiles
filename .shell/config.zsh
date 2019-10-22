@@ -80,3 +80,9 @@ unsetopt rm_star_silent       # if * in rm, ask if that's correct
 setopt rm_star_wait           # wait before actually doint rm some/*
 
 bindkey -e
+
+# zsh-dirnav keybindings
+bindkey "^[[1;5D" _dirnav_parent     # ctrl-left
+bindkey "^[[5D"   _dirnav_parent     # ctrl-left
+bindkey "^[[1;5C" _dirnav_child      # ctrl-right
+bindkey "^[[5C"   _dirnav_child      # ctrl-right

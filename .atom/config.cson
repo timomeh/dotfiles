@@ -44,6 +44,7 @@
       "touch-slide"
       "js-hyperclick"
       "pigments"
+      "teletype"
     ]
     projectHome: "/Users/timo/dev"
     telemetryConsent: "limited"
@@ -74,6 +75,7 @@
     useRipGrep: true
   "git-blame":
     colorCommitAuthors: true
+    columnWidth: 317
   "git-plus":
     commits:
       verboseCommits: true
@@ -110,6 +112,7 @@
     command: "/Users/timo/.rbenv/shims/rubocop"
   "linter-ui-default":
     panelHeight: 300
+    showPanel: true
   "markdown-preview":
     useGitHubStyle: true
   minimap:

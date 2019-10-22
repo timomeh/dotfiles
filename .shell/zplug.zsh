@@ -16,13 +16,13 @@ zplug "~/dev/nigiri", from:local, as:theme
 # alias-tips
 # An oh-my-zsh plugin to help remembering those aliases you defined once
 # https://github.com/djui/alias-tips
-zplug "djui/alias-tips", defer:3
+zplug "djui/alias-tips", defer:1
 
 
 # enhancd
 # A next-generation cd command with an interactive filter
 # https://github.com/b4b4r07/enhancd
-zplug "b4b4r07/enhancd", use:init.sh
+zplug "b4b4r07/enhancd", use:init.sh, defer:3
 
 
 # k
@@ -58,7 +58,12 @@ zplug "zsh-users/zsh-autosuggestions"
 # zsh-syntax-highlighting
 # Fish shell like syntax highlighting for Zsh.
 # https://github.com/zsh-users/zsh-syntax-highlighting
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
+
+# zsh-dirnav
+# Use ctrl-left/right to navigate to parent dir or back
+# https://github.com/gparker42/zsh-dirnav/
+zplug "gparker42/zsh-dirnav", use:dirnav, defer:2
 
 
 # Install plugins if there are plugins that have not been installed
