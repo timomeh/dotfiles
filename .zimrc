@@ -20,3 +20,4 @@ zmodule MikeDacre/cdbk
 zmodule torifat/npms
 zmodule jscutlery/nx-completion --source nx-completion.plugin.zsh
 zmodule g-plane/zsh-yarn-autocompletions
+zmodule icatalina/zsh-navi-plugin
