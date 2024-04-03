@@ -6,6 +6,7 @@ zmodule utility # Utility aliases and functions. Adds colour to ls, grep and les
 
 zmodule duration-info
 zmodule git-info
+zmodule exa
 
 zmodule zsh-users/zsh-completions
 zmodule completion
