@@ -1,0 +1,20 @@
+zmodule environment # Sets sane Zsh built-in environment options.
+zmodule git # Provides handy git aliases and functions.
+zmodule input # Applies correct bindkeys for input events.
+zmodule termtitle # Sets a custom terminal title.
+zmodule utility # Utility aliases and functions. Adds colour to ls, grep and less.
+
+zmodule duration-info
+zmodule git-info
+
+zmodule zsh-users/zsh-completions
+zmodule completion
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+
+zmodule trystan2k/zsh-tab-title
+zmodule djui/alias-tips
+zmodule supercrabtree/k
+zmodule MikeDacre/cdbk
+zmodule torifat/npms

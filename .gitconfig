@@ -1,0 +1,78 @@
+[include]
+  path = ~/.gitconfig_local
+
+[includeIf "gitdir:~/Developer/gigs/"]
+    path = ~/Developer/gigs/.gitconfig-gigs
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = code --wait
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  ignorecase = false
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
+[push]
+  default = simple
+
+[diff]
+  tool = default-difftool
+
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[color]
+  ui = true
+  ignorecase = false
+
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
+[alias]
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
+  l = !"git lg1"
+  wip = !"[[ $(git log -1 --pretty=%B) == \"WIP\" ]] && (git reset --soft \"HEAD^\") || (git add . && git commit -m \"WIP\")"
+
+  ps = push
+  pl = pull
+
+  a = add
+  aa = add -A
+  c = commit --verbose
+  ca = commit -a --verbose
+  cm = commit -m
+  cam = commit -a -m
+  m = commit --amend --verbose
+
+  cdiff = "!f() { git diff "$1"^.."$1"; }; f"
+
+  s = status
+
+  co = checkout
+  cob = checkout -b
+  cof = checkout --
+  pr = "!f() { git fetch upstream "pull/$1/head" && git checkout FETCH_HEAD; }; f"
+
+  housekeeping = !"git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
+
+  cdiff = "!f() { git diff $1^ $1; }; f"
+
+  # list aliases
+  wat = !"git config -l | grep alias | cut -c 7-"

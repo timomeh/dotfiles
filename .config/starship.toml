@@ -1,0 +1,9 @@
+format = "$all"
+command_timeout = 1000000
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[△](bold black)"
+error_symbol = "[△](bold red)"
+
+[gcloud]
+disabled = true
