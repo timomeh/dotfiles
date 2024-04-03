@@ -19,3 +19,5 @@ zmodule djui/alias-tips
 zmodule supercrabtree/k
 zmodule MikeDacre/cdbk
 zmodule torifat/npms
+zmodule jscutlery/nx-completion --source nx-completion.plugin.zsh
+zmodule g-plane/zsh-yarn-autocompletions
