@@ -23,6 +23,11 @@ zinit light-mode for \
 
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
+autoload -Uz zmathfunc
+zmathfunc
+
+zinit light Aloxaf/fzf-tab
+
 zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
     atpull'%atclone' pick"clrs.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
@@ -59,13 +64,14 @@ zinit light trystan2k/zsh-tab-title
 zinit load zsh-users/zsh-history-substring-search
 zinit ice wait atload'_history_substring_search_config'
 
-zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
-zinit light zdharma-continuum/zsh-diff-so-fancy
-
 zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
 zinit light cantino/mcfly
 
 zinit snippet 'https://github.com/remino/omz-plugin-git-aliases/blob/main/git-aliases.plugin.zsh'
 zinit snippet 'https://github.com/MikeDacre/cdbk/blob/master/cdbk.plugin.zsh'
+
+zinit ice blockf
 zinit snippet 'https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh'
+
+zinit ice blockf
 zinit snippet 'https://github.com/jscutlery/nx-completion/blob/main/nx-completion.plugin.zsh'

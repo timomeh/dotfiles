@@ -24,10 +24,10 @@ zstyle ':completion:*:matches' group 'yes'
 zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*:options' auto-description '%d'
 zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
-zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
+# zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
-zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
+# zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
 
@@ -108,3 +108,44 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
 # partial completion suggestions
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' expand prefix suffix
+
+## zstyle specific to fzf-ab
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
+# preview environment variables
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
+  fzf-preview 'echo ${(P)word}'
+# preview git
+zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
+  'git diff $word | delta'
+zstyle ':fzf-tab:complete:git-log:*' fzf-preview \
+  'git log --color=always $word'
+zstyle ':fzf-tab:complete:git-help:*' fzf-preview \
+  'git help $word | bat -plman --color=always'
+zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
+  'case "$group" in
+  "commit tag") git show --color=always $word ;;
+  *) git show --color=always $word | delta ;;
+  esac'
+zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
+  'case "$group" in
+  "modified file") git diff $word | delta ;;
+  "recent commit object name") git show --color=always $word | delta ;;
+  *) git log --color=always $word ;;
+  esac'
+# preview brew
+zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'brew info $word'
+
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
