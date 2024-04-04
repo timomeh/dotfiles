@@ -21,57 +21,58 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-zinit snippet OMZ::plugins/git/git.plugin.zsh
+# Load plugins which can't use Turbo mode.
+#
+# Aloxaf/fzf-tab: tab completion with fzf as completion menu (does not work with turbo)
+# trapd00r/LS_COLORS: color mappings for files depending on type (required by fzf-tab)
+# redxtech/zsh-asdf-direnv: asdf-direnv integration (direnv isn't applied on load with turbo)
+zinit light-mode for \
+    Aloxaf/fzf-tab \
+    redxtech/zsh-asdf-direnv \
+  atclone"dircolors -b LS_COLORS > clrs.zsh" \
+  atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+  atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
+    trapd00r/LS_COLORS
 
-autoload -Uz zmathfunc
-zmathfunc
-
-zinit light Aloxaf/fzf-tab
-
-zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit light trapd00r/LS_COLORS
-
-zinit wait lucid for \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+# A bunch of plugins
+#
+# torifat/npms: browse npm scripts of package.json
+# icatalina/zsh-navi-plugin: adds navi_widget function for navi
+# trystan2k/zsh-tab-title: directory in terminal title
+# zsh-users/zsh-history-substring-search: navigate up/down through history matches while typing
+# remino/omz-plugin-git-aliases: Alias all git aliases with g<alias>
+# MikeDacre/cdbk: cd bookmarks
+# zdharma-continuum/fast-syntax-highlighting: highlight commands
+# zsh-users/zsh-autosuggestions: fish-like autosuggestions while typing
+# cantino/mcfly: ctrl-r history on steroids
+zinit lucid wait for \
+    torifat/npms \
+    trystan2k/zsh-tab-title \
+    icatalina/zsh-navi-plugin \
+    zsh-users/zsh-history-substring-search \
+    remino/omz-plugin-git-aliases \
+    MikeDacre/cdbk \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
- blockf \
+  atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+  from"gh-r" as"program" atload'eval "$(mcfly init zsh)"' \
+    cantino/mcfly
+
+# completions
+zi wait lucid blockf atload"zicompinit; zicdreplay" for \
     zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
+    MenkeTechnologies/zsh-more-completions \
+    g-plane/pnpm-shell-completion \
+    g-plane/zsh-yarn-autocompletions \
+    jscutlery/nx-completion \
+    'https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh'
 
-zinit ice lucid nocompile wait'0e' nocompletions
-zinit load MenkeTechnologies/zsh-more-completions
-
-zinit ice atload"zpcdreplay" atclone"./zplug.zsh" atpull"%atclone" atinit"zpcompinit; zpcdreplay"
-zinit light g-plane/pnpm-shell-completion
-
-zinit ice atload"zpcdreplay" atclone'./zplug.zsh'
-zinit light g-plane/zsh-yarn-autocompletions
-
+# bins
 zinit wait"1" lucid from"gh-r" as"null" for \
-     sbin"fzf"          junegunn/fzf-bin \
-     sbin"**/fd"        @sharkdp/fd \
-     sbin"**/bat"       @sharkdp/bat \
-     sbin"exa* -> exa"  ogham/exa
+    sbin"fzf"          junegunn/fzf-bin \
+    sbin"**/fd"        @sharkdp/fd \
+    sbin"**/bat"       @sharkdp/bat \
+    sbin"exa* -> exa"  ogham/exa
 
-zinit light torifat/npms
-zinit light redxtech/zsh-asdf-direnv
-zinit light icatalina/zsh-navi-plugin
-zinit light trystan2k/zsh-tab-title
-
-zinit load zsh-users/zsh-history-substring-search
-zinit ice wait atload'_history_substring_search_config'
-
-zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
-zinit light cantino/mcfly
-
-zinit snippet 'https://github.com/remino/omz-plugin-git-aliases/blob/main/git-aliases.plugin.zsh'
-zinit snippet 'https://github.com/MikeDacre/cdbk/blob/master/cdbk.plugin.zsh'
-
-zinit ice blockf
-zinit snippet 'https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh'
-
-zinit ice blockf
-zinit snippet 'https://github.com/jscutlery/nx-completion/blob/main/nx-completion.plugin.zsh'
+# Debug load times with `zinit times`
