@@ -32,7 +32,7 @@ setopt PUSHD_TO_HOME
 
 # Treat `#`, `~`, and `^` as patterns for filename globbing.
 # This is causing issues with zsh-autosuggestions and completions
-# setopt EXTENDED_GLOB
+setopt EXTENDED_GLOB
 
 #
 # History
