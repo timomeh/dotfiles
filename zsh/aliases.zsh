@@ -1,17 +1,7 @@
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias pn="pnpm"
 
-# Ensure exa is available
-if (( ${+commands[eza]} )); then
-  alias ls='eza --group-directories-first'
-elif (( ${+commands[exa]} )); then
-  alias ls='exa --group-directories-first'
-else
-  return 1
-fi
-
-export EXA_COLORS='da=1;34:gm=1;34'
-
+alias ls='exa --group-directories-first'
 alias ll='ls -l --git'        # Long format, git status
 alias l='ll -a'               # Long format, all files
 alias lr='ll -T'              # Long format, recursive as a tree

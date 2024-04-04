@@ -21,6 +21,16 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+# Notes to self:
+# 
+# zinit's `for` syntax works like this
+# - All flags before `for` are applied to all plugins
+# - You can list multiple plugins after `for`
+# - When a flag is after `for`, it's applied only to the next plugin
+# - zinit automatically detects what's a flag and what's a plugin
+#
+# Use `zinit times` to debug loading times
+
 # Load plugins which can't use Turbo mode.
 #
 # Aloxaf/fzf-tab: tab completion with fzf as completion menu (does not work with turbo)
@@ -34,7 +44,7 @@ zinit light-mode for \
   atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
     trapd00r/LS_COLORS
 
-# A bunch of plugins
+# A bunch of plugins, Tubro mode.
 #
 # torifat/npms: browse npm scripts of package.json
 # icatalina/zsh-navi-plugin: adds navi_widget function for navi
@@ -75,4 +85,14 @@ zinit wait"1" lucid from"gh-r" as"null" for \
     sbin"**/bat"       @sharkdp/bat \
     sbin"exa* -> exa"  ogham/exa
 
-# Debug load times with `zinit times`
+# Local files
+zinit is-snippet for \
+    ~/dotfiles/zsh/aliases.zsh \
+    ~/dotfiles/zsh/config.zsh \
+    ~/dotfiles/zsh/keybindings.zsh \
+    ~/dotfiles/zsh/locale.zsh \
+    ~/dotfiles/zsh/path.zsh \
+    ~/dotfiles/zsh/tools.zsh \
+    ~/dotfiles/zsh/zstyle.zsh \
+  blockf \
+    ~/dotfiles/zsh/completions.zsh

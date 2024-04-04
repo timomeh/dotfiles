@@ -1,3 +1,4 @@
+# zstyle default stolen here:
 # https://www.reddit.com/r/zsh/comments/1874tlq/comment/kbdsxwu/
 
 # apply ls colors
@@ -109,7 +110,8 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
 zstyle ':completion:*' list-suffixes
 zstyle ':completion:*' expand prefix suffix
 
-## zstyle specific to fzf-ab
+## zstyle specific to fzf-tab
+# https://github.com/Aloxaf/fzf-tab/wiki/Configuration
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -147,5 +149,5 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
   esac'
 # preview brew
 zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'brew info $word'
-
+# preview files
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
