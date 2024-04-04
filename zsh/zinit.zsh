@@ -52,6 +52,7 @@ zinit light-mode for \
 # zsh-users/zsh-history-substring-search: navigate up/down through history matches while typing
 # remino/omz-plugin-git-aliases: Alias all git aliases with g<alias>
 # MikeDacre/cdbk: cd bookmarks
+# z-shell/zsh-zoxide: smarter cd which remembers directories so you can jump to them
 # zdharma-continuum/fast-syntax-highlighting: highlight commands
 # zsh-users/zsh-autosuggestions: fish-like autosuggestions while typing
 # cantino/mcfly: ctrl-r history on steroids
@@ -88,7 +89,9 @@ zinit wait"1" lucid from"gh-r" as"null" for \
     sbin"exa* -> exa"  ogham/exa
 
 # Local files
-zinit is-snippet for \
+# These could also simply be sourced, but loading them via zinit allows me to
+# inspect their loading times with `zinit times`.
+zinit is-snippet link for \
     ~/dotfiles/zsh/aliases.zsh \
     ~/dotfiles/zsh/config.zsh \
     ~/dotfiles/zsh/keybindings.zsh \

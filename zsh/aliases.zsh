@@ -1,5 +1,7 @@
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias pn="pnpm"
+alias ping="pingu"
+alias pping="prettyping"
 
 alias ls='exa --group-directories-first'
 alias ll='ls -l --git'        # Long format, git status
