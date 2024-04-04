@@ -1,5 +1,3 @@
-zmodule environment # Sets sane Zsh built-in environment options.
-zmodule git # Provides handy git aliases and functions.
 zmodule input # Applies correct bindkeys for input events.
 zmodule termtitle # Sets a custom terminal title.
 zmodule utility # Utility aliases and functions. Adds colour to ls, grep and less.
@@ -7,17 +5,23 @@ zmodule utility # Utility aliases and functions. Adds colour to ls, grep and les
 zmodule duration-info
 zmodule git-info
 zmodule exa
+zmodule magic-enter
 
-zmodule zsh-users/zsh-completions
+zmodule remino/omz-plugin-git-aliases --source ./git-aliases.plugin.zsh
+
+zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
+zmodule g-plane/pnpm-shell-completion # needs binary downloaded from releases
+zmodule g-plane/zsh-yarn-autocompletions
 zmodule zsh-users/zsh-autosuggestions
-zmodule zsh-users/zsh-syntax-highlighting
+zmodule jscutlery/nx-completion
+
 zmodule zsh-users/zsh-history-substring-search
 
 zmodule trystan2k/zsh-tab-title
 zmodule djui/alias-tips
 zmodule MikeDacre/cdbk
 zmodule torifat/npms
-zmodule jscutlery/nx-completion --source nx-completion.plugin.zsh
-zmodule g-plane/zsh-yarn-autocompletions
 zmodule icatalina/zsh-navi-plugin
+
+zmodule zsh-users/zsh-syntax-highlighting

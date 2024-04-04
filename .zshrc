@@ -1,9 +1,5 @@
-# Just an entry file to source other files, mainly inside zsh_configs.
-# If there's anything else in here, it's likely from some tool I installed which
-# automatically added it.
-
-# extra files in zsh_configs/pre , zsh_configs, and zsh_configs/post
-# these are loaded first, second, and third, respectively.
+# Automatically source config files. Files in zsh_configs/pre, zsh_configs
+# and zsh_configs/post are loaded in this order.
 _load_settings() {
   _dir="$1"
   if [ -d "$_dir" ]; then

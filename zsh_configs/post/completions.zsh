@@ -1,2 +1,3 @@
 fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
+autoload -Uz _asdf
+compdef _asdf asdf

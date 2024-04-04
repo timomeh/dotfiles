@@ -12,4 +12,4 @@ if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
 fi
 
 # Bind ctrl-n to open navi
-bindkey '^N' navi_widget
+bindkey '^n' navi_widget
