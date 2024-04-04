@@ -2,9 +2,9 @@
 
 Dotfiles
 
-- managed with [stow](https://www.gnu.org/software/stow/).
+- managed with [stow](https://www.gnu.org/software/stow/)
 - inspired by a video from [Dreams of Autonomy](https://www.youtube.com/watch?v=y6XCebnB9gs)
-- with structure inspired by [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
+- using [zinit](https://github.com/zdharma-continuum/zinit) to load zsh config and plugins
 
 ## Workflows
 
