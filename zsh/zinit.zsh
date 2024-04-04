@@ -62,6 +62,8 @@ zinit lucid wait for \
     zsh-users/zsh-history-substring-search \
     remino/omz-plugin-git-aliases \
     MikeDacre/cdbk \
+  has'zoxide' atinit"_ZO_CMD_PREFIX=cd" \
+    z-shell/zsh-zoxide \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
   atload"!_zsh_autosuggest_start" \
