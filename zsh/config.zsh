@@ -28,6 +28,9 @@ setopt PUSHD_TO_HOME
 # Expansion and globbing
 #
 
+# Show ./ and ../ in cd completion
+setopt globdots
+
 # Treat `#`, `~`, and `^` as patterns for filename globbing.
 # This is causing issues with zsh-autosuggestions and completions
 setopt EXTENDED_GLOB
