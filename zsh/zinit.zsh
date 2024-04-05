@@ -30,40 +30,57 @@ zinit light-mode for \
 # - zinit automatically detects what's a flag and what's a plugin
 #
 # Use `zinit times` to debug loading times
+#
+# Requires packages installed via brew:
+# thefuck
+# eza
+
+zinit pack for ls_colors
+
+# prompt
+zinit ice from"gh-r" as"command" atload'eval "$(starship init zsh)"'
+zinit load starship/starship
+
+# initialize thefuck some time
+zinit ice atload'eval "$(thefuck --alias)"'
+
+# Install hook for asdf direnv
+zinit ice link
+zinit snippet ~/dotfiles/zsh/asdf_direnv.zsh
 
 # Load plugins which can't use Turbo mode.
-#
-# Aloxaf/fzf-tab: tab completion with fzf as completion menu (does not work with turbo)
-# trapd00r/LS_COLORS: color mappings for files depending on type (required by fzf-tab)
-# redxtech/zsh-asdf-direnv: asdf-direnv integration (direnv isn't applied on load with turbo)
+# fzf-tab simply won't work
+# asdf-direnv needs to be loaded immediately, otherwise the env vars aren't
+# populated when opening a new session
 zinit light-mode for \
     Aloxaf/fzf-tab \
-    redxtech/zsh-asdf-direnv \
-  atclone"dircolors -b LS_COLORS > clrs.zsh" \
-  atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-  atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”' \
-    trapd00r/LS_COLORS
+  atinit:'export ASDF_DIR="$PWD"' \
+  atclone:'_zini_asdf_install' \
+  src:'asdf.sh' \
+  multisrc:'asdf_direnv_hook.zsh' \
+  depth:1 \
+    @asdf-vm/asdf
 
-# A bunch of plugins, Tubro mode.
+# A bunch of plugins, loaded with Tubro mode.
 #
-# torifat/npms: browse npm scripts of package.json
-# icatalina/zsh-navi-plugin: adds navi_widget function for navi
-# trystan2k/zsh-tab-title: directory in terminal title
-# zsh-users/zsh-history-substring-search: navigate up/down through history matches while typing
-# remino/omz-plugin-git-aliases: Alias all git aliases with g<alias>
-# MikeDacre/cdbk: cd bookmarks
-# z-shell/zsh-zoxide: smarter cd which remembers directories so you can jump to them
-# zdharma-continuum/fast-syntax-highlighting: highlight commands
-# zsh-users/zsh-autosuggestions: fish-like autosuggestions while typing
-# cantino/mcfly: ctrl-r history on steroids
-zinit lucid wait for \
+# npms: browse npm scripts of package.json
+# zsh-navi-plugin: adds navi_widget function for navi
+# zsh-tab-title: directory in terminal title
+# zsh-history-substring-search: navigate up/down through history matches while typing
+# omz-plugin-git-aliases: Alias all git aliases with g<alias>
+# cdbk: cd bookmarks
+# zsh-zoxide: smarter cd which remembers directories so you can jump to them
+# fast-syntax-highlighting: highlight commands
+# zsh-autosuggestions: fish-like autosuggestions while typing
+# mcfly: ctrl-r history on steroids
+zinit lucid for \
     torifat/npms \
     trystan2k/zsh-tab-title \
     icatalina/zsh-navi-plugin \
     zsh-users/zsh-history-substring-search \
     remino/omz-plugin-git-aliases \
     MikeDacre/cdbk \
-  has'zoxide' atinit"_ZO_CMD_PREFIX=cd" \
+  atinit"_ZO_CMD_PREFIX=cd" \
     z-shell/zsh-zoxide \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
@@ -75,18 +92,19 @@ zinit lucid wait for \
 # completions
 zi wait lucid blockf atload"zicompinit; zicdreplay" for \
     zsh-users/zsh-completions \
+  nocompile nocompletions \
     MenkeTechnologies/zsh-more-completions \
+  atclone"./zplug.zsh" atpull"%atclone" \
     g-plane/pnpm-shell-completion \
+  atload"zpcdreplay" atclone'./zplug.zsh' \
     g-plane/zsh-yarn-autocompletions \
-    jscutlery/nx-completion \
-    'https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh'
+    jscutlery/nx-completion
 
 # bins
 zinit wait"1" lucid from"gh-r" as"null" for \
     sbin"fzf"          junegunn/fzf-bin \
     sbin"**/fd"        @sharkdp/fd \
-    sbin"**/bat"       @sharkdp/bat \
-    sbin"exa* -> exa"  ogham/exa
+    sbin"**/bat"       @sharkdp/bat
 
 # Local files
 # These could also simply be sourced, but loading them via zinit allows me to

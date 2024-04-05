@@ -3,7 +3,7 @@ alias pn="pnpm"
 alias ping="pingu"
 alias pping="prettyping"
 
-alias ls='exa --group-directories-first'
+alias ls='eza --group-directories-first'
 alias ll='ls -l --git'        # Long format, git status
 alias l='ll -a'               # Long format, all files
 alias lr='ll -T'              # Long format, recursive as a tree
