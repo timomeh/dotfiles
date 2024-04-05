@@ -113,6 +113,9 @@ zstyle ':completion:*' expand prefix suffix
 ## zstyle specific to fzf-tab
 # https://github.com/Aloxaf/fzf-tab/wiki/Configuration
 
+# Show ./ and ../ in completion. Needs setopt globdots
+zstyle ':completion:*' special-dirs true
+
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
@@ -126,9 +129,11 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
+
 # preview environment variables
 zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
   fzf-preview 'echo ${(P)word}'
+
 # preview git
 zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
   'git diff $word | delta'
@@ -147,9 +152,34 @@ zstyle ':fzf-tab:complete:git-checkout:*' fzf-preview \
   "recent commit object name") git show --color=always $word | delta ;;
   *) git log --color=always $word ;;
   esac'
+
 # preview brew
 zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' fzf-preview 'brew info $word'
+
 # preview files
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 zstyle ':fzf-tab:complete:-command-:*' fzf-preview \
   '(out=$(tldr --color always "$word") 2>/dev/null && echo $out) || (out=$(MANWIDTH=$FZF_PREVIEW_COLUMNS man "$word") 2>/dev/null && echo $out) || (out=$(which "$word") && echo $out) || echo "${(P)word}"'
+
+# preview pnpm: packages and scripts
+zstyle ':fzf-tab:complete:pnpm:values' fzf-preview \
+  'case "$group" in
+  "[deps]") pnpm ls $word --color=always ;;
+  "[scripts]") pnpm pkg get scripts.$word --color=always | sed "s/^{\\(.*\\)}\$/\\1/; s/^\"\\(.*\\)\"\$/\\1/" ;;
+  esac'
+
+# preview npm: packages and scripts
+zstyle ':fzf-tab:complete:npm:*' fzf-preview \
+  'case "$words[2]" in
+  "r" | "uninstall") npm list $word --depth=0 --color=always ;;
+  "i" | "install") npm view $word --color=always ;;
+  "run") npm view $word --color=always ;;
+  esac'
+
+# preview yarn: packages and scripts
+zstyle ':fzf-tab:complete:yarn:*' fzf-preview \
+  'case "$words[2]" in
+  "remove") yarn list $word --depth=0 --silent 2> >(grep -v warning 1>&2) ;;
+  "add") npm view $word --color=always ;;
+  "" | "run" | "r") npm pkg get scripts.$word --color=always | sed "s/^{\\(.*\\)}\$/\\1/; s/^\"\\(.*\\)\"\$/\\1/" ;;
+  esac'

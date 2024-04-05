@@ -41,9 +41,6 @@ zinit pack for ls_colors
 zinit ice from"gh-r" as"command" atload'eval "$(starship init zsh)"'
 zinit load starship/starship
 
-# initialize thefuck some time
-zinit ice atload'eval "$(thefuck --alias)"'
-
 # Install hook for asdf direnv
 zinit ice link
 zinit snippet ~/dotfiles/zsh/asdf_direnv.zsh
@@ -54,11 +51,11 @@ zinit snippet ~/dotfiles/zsh/asdf_direnv.zsh
 # populated when opening a new session
 zinit light-mode for \
     Aloxaf/fzf-tab \
-  atinit:'export ASDF_DIR="$PWD"' \
-  atclone:'_zini_asdf_install' \
-  src:'asdf.sh' \
-  multisrc:'asdf_direnv_hook.zsh' \
-  depth:1 \
+  atinit'export ASDF_DIR="$PWD"' \
+  atclone"_zini_asdf_install" \
+  src"asdf.sh" \
+  multisrc"asdf_direnv_hook.zsh" \
+  depth"1" \
     @asdf-vm/asdf
 
 # A bunch of plugins, loaded with Tubro mode.
@@ -96,9 +93,10 @@ zi wait lucid blockf atload"zicompinit; zicdreplay" for \
     MenkeTechnologies/zsh-more-completions \
   atclone"./zplug.zsh" atpull"%atclone" \
     g-plane/pnpm-shell-completion \
-  atload"zpcdreplay" atclone'./zplug.zsh' \
+  atload"zpcdreplay" atclone"./zplug.zsh" \
     g-plane/zsh-yarn-autocompletions \
-    jscutlery/nx-completion
+    jscutlery/nx-completion \
+    lukechilds/zsh-better-npm-completion
 
 # bins
 zinit wait"1" lucid from"gh-r" as"null" for \
@@ -109,7 +107,7 @@ zinit wait"1" lucid from"gh-r" as"null" for \
 # Local files
 # These could also simply be sourced, but loading them via zinit allows me to
 # inspect their loading times with `zinit times`.
-zinit is-snippet link for \
+zinit wait lucid is-snippet link for \
     ~/dotfiles/zsh/aliases.zsh \
     ~/dotfiles/zsh/config.zsh \
     ~/dotfiles/zsh/keybindings.zsh \
