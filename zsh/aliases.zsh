@@ -11,3 +11,5 @@ alias lx='ll -sextension'     # Long format, sort by extension
 alias lk='ll -ssize'          # Long format, largest file size last
 alias lt='ll -smodified'      # Long format, newest modification time last
 alias lc='ll -schanged'       # Long format, newest status change (ctime) last
+
+alias gclogin='gcloud auth login --update-adc'
