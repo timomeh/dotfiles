@@ -1,12 +1,24 @@
-format = "$all"
-command_timeout = 1000000
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[character] # The name of the module we are configuring is "character"
-success_symbol = "[△](bold black)"
-error_symbol = "[△](bold red)"
+add_newline = true
+
+command_timeout = 1000000
+format = "$all$fill$time$line_break$character"
+
+[character]
+error_symbol = "[](bold red)"
+success_symbol = "[](bold blue)"
 
 [gcloud]
 disabled = true
 
 [sudo]
 disabled = false
+
+[time]
+disabled = false
+format = ' $time(bold blue) '
+
+[fill]
+style = 'bold black'
+symbol = '·'
