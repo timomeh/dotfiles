@@ -29,7 +29,7 @@ style = "Regular"
 
 [font.bold]
 family = "SFMono Nerd Font"
-style = "Bold"
+style = "Semibold"
 
 [font.italic]
 family = "SFMono Nerd Font"
@@ -37,7 +37,7 @@ style = "Italic"
 
 [font.bold_italic]
 family = "SFMono Nerd Font"
-style = "Bold Italic"
+style = "Semibold Italic"
 
 [keyboard]
 bindings = [

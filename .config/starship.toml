@@ -17,8 +17,11 @@ disabled = false
 
 [time]
 disabled = false
-format = ' $time(bold blue) '
+format = " $time(bold blue) "
 
 [fill]
-style = 'bold black'
-symbol = '·'
+style = "bold black"
+symbol = "·"
+
+[directory]
+style = "bold blue"
