@@ -22,14 +22,4 @@ module.exports = {
       }
     }
   ],
-  handlers: [{
-    match: "linear.app/gigs/*",
-    browser: "Linear"
-  }]
-}
-
-function addAuthuser(search) {
-  if (search.includes('authuser')) return search
-  if (!search) return 'authuser=timo@gigs.com'
-  return search.concat('&authuser=timo@gigs.com')
 }
