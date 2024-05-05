@@ -5,3 +5,6 @@ README.md
 zsh
 navi_cheats
 .config/alacritty/themes
+
+# karabiner no likey symlinked files, only symlinked ~/.config/karabiner
+.config/karabiner/karabiner.json
