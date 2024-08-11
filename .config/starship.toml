@@ -15,6 +15,12 @@ disabled = true
 [sudo]
 disabled = false
 
+[docker_context]
+disabled = true
+
+[nodejs]
+disabled = true
+
 [time]
 disabled = false
 format = " $time(bold blue) "

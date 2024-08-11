@@ -22,7 +22,7 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # Notes to self:
-# 
+#
 # zinit's `for` syntax works like this
 # - All flags before `for` are applied to all plugins
 # - You can list multiple plugins after `for`
@@ -41,20 +41,12 @@ zinit pack for ls_colors
 zinit ice from"gh-r" as"command" atload'eval "$(starship init zsh)"'
 zinit load starship/starship
 
-# Install hook for asdf direnv
-zinit ice link
-zinit snippet ~/dotfiles/zsh/asdf_direnv.zsh
-
 # Load plugins which can't use Turbo mode.
-# fzf-tab simply won't work
-# asdf-direnv needs to be loaded immediately, otherwise the env vars aren't
-# populated when opening a new session
 zinit light-mode for \
     Aloxaf/fzf-tab \
   atinit'export ASDF_DIR="$PWD"' \
   atclone"_zini_asdf_install" \
   src"asdf.sh" \
-  multisrc"asdf_direnv_hook.zsh" \
   depth"1" \
     @asdf-vm/asdf
 
