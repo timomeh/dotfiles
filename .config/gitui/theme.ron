@@ -1,0 +1,5 @@
+(
+    selection_bg: Some("Black"),
+    cmdbar_bg: Some("Reset"),
+    cmdbar_extra_lines_bg: Some("Reset"),
+)
