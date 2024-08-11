@@ -20,7 +20,7 @@ It will symlink the new file.
 
 ### Track an existing file in dotfiles
 
-Create an empty file which you want to traack in the `/dotfiles` directory. The file structure inside the dotfiles directory needs to be the same as if it were in the home directory. The run:
+Create an empty file which you want to track in the `/dotfiles` directory. The file structure inside the dotfiles directory needs to be the same as if it were in the home directory. The run:
 
 ```console
 stow --adopt .
