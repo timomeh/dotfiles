@@ -11,10 +11,11 @@
     "metrics": false
   },
   "ui_font_size": 15,
+  "buffer_font_family": "Dank Mono",
   "buffer_font_size": 15,
   "base_keymap": "VSCode",
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
     "dark": "Tokyo Night"
   },
@@ -51,5 +52,5 @@
     "code_actions": {
       "source.fixAll.eslint": true
     }
-  },
+  }
 }
