@@ -6,7 +6,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  editor = zed --wait
+  editor = code --wait
   pager = delta
   ignorecase = false
 
