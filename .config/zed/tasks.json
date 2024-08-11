@@ -1,0 +1,21 @@
+// Static tasks configuration.
+//
+// Example:
+[
+  {
+    "label": "git: ui",
+    "command": "gitui",
+    "reveal": "always",
+    "hide": "on_success",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "git: commit",
+    "command": "git commit",
+    "reveal": "never",
+    "hide": "always",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  }
+]
