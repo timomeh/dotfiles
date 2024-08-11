@@ -17,5 +17,21 @@
     "hide": "always",
     "use_new_terminal": false,
     "allow_concurrent_runs": false
+  },
+  {
+    "label": "git: commit amend",
+    "command": "git commit --amend",
+    "reveal": "never",
+    "hide": "always",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "git: commit amend (no edit)",
+    "command": "git commit --amend --no-edit",
+    "reveal": "never",
+    "hide": "always",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false
   }
 ]
