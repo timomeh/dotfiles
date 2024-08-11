@@ -18,6 +18,7 @@ disabled = false
 [docker_context]
 disabled = true
 
+# enable once performance issues fixed
 [nodejs]
 disabled = true
 
