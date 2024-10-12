@@ -1,1 +1,0 @@
-source "$HOME/dotfiles/zsh/zinit.zsh"

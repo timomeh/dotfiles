@@ -1,29 +1,19 @@
 # dotfiles
 
-Dotfiles
+My dotfiles configuration using nix, nix-darwin and home-manager.
 
-- managed with [stow](https://www.gnu.org/software/stow/)
-- inspired by a video from [Dreams of Autonomy](https://www.youtube.com/watch?v=y6XCebnB9gs)
-- using [zinit](https://github.com/zdharma-continuum/zinit) to load zsh config and plugins
+## Re-apply
 
-## Workflows
-
-### Add a new file to dotfiles
-
-Add the file into `/dotfiles`. The file structure inside the dotfiles directory needs to be the same as if it were in the home directory. Then run:
-
-```console
-stow .
+```
+darwin-rebuild switch --flake .
 ```
 
-It will symlink the new file.
+## Install
 
-### Track an existing file in dotfiles
+Install using nix-darwin flake: https://github.com/LnL7/nix-darwin#flakes
 
-Create an empty file which you want to track in the `/dotfiles` directory. The file structure inside the dotfiles directory needs to be the same as if it were in the home directory. The run:
+## Links
 
-```console
-stow --adopt .
-```
-
-It will copy the file contents of the existing "old" dotfile into the "new" dotfile, and symlink the file.
+- https://nixos.wiki/wiki/Zsh
+- https://mynixos.com/home-manager/options/programs
+- https://search.nixos.org/
