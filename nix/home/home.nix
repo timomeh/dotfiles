@@ -6,34 +6,66 @@
   home.username = "timomeh";
   home.homeDirectory = "/Users/timomeh";
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # Enable and configure programs that are included in home-manager
+  programs = {
+    direnv.enable = true;
+    direnv.nix-direnv.enable = true;
+
+    dircolors.enable = true;
+    dircolors.settings = {
+      ".di" = "4;59"; # directory color override
+    };
+
+    bat.enable = true;
+    eza.enable = true;
+    home-manager.enable = true;
+    fd.enable = true;
+    fzf.enable = true;
+    jq.enable = true;
+    less.enable = true;
+    thefuck.enable = true;
+
+    gh.enable = true;
+    gh.settings = {
+      git_protocol = "ssh";
+      prompt = "enabled";
+      aliases = {
+        co = "pr checkout";
+        pv = "pr view";
+      };
+    };
+
+    zoxide.enable = true;
+    zoxide.options = ["--cmd cd"];
+
+    navi.enable = true;
+    navi.settings = {
+      cheats = {
+        paths = [
+          "~/Library/Application Support/navi"
+          "~/.config/navi_cheats" # symlinked to /navi_cheats, see below
+        ];
+      };
+      shell = {
+        command = "zsh";
+      };
+    };
+
+    git = import ./git.nix {inherit config pkgs;};
+    starship = import ./starship.nix {inherit config pkgs;};
+    mcfly = import ./mcfly.nix {inherit config pkgs;};
+    mise = import ./mise.nix {inherit config pkgs;};
+    zsh = import ./zsh.nix {inherit config pkgs;};
+  };
+
+  # Packages that should be installed to the user profile.
+  home.packages = [
+    pkgs.pingu
+  ];
 
   home.file.".config/navi_cheats".source = ./navi_cheats;
   home.file.".local/bin/gigs".source = ./bin/gigs;
   home.file.".local/bin/gurl".source = ./bin/gurl;
-  
-  home.file.".gitignore_global".text = ''
-    .tool-versions
-    *.DS_Store
-    .AppleDouble
-    .LSOverride
-    .vscode
-    ._*
-    .DocumentRevisions-V100
-    .fseventsd
-    .Spotlight-V100
-    .TemporaryItems
-    .Trashes
-    .VolumeIcon.icns
-    .com.apple.timemachine.donotpresent
-    .AppleDB
-    .AppleDesktop
-    Network Trash Folder
-    Temporary Items
-    .apdisk
-    .tags
-  '';
 
   home.file.".finicky.js".text = ''
     // Use https://finicky-kickstart.now.sh to generate basic configuration
@@ -62,28 +94,6 @@
       ],
     }
   '';
-
-  programs = {
-    bat = import ./bat.nix {inherit config pkgs;};
-    eza = import ./eza.nix {inherit config pkgs;};
-    fd = import ./fd.nix {inherit config pkgs;};
-    fzf = import ./fzf.nix {inherit config pkgs;};
-    dircolors = import ./dircolors.nix {inherit config pkgs;};
-    git = import ./git.nix {inherit config pkgs;};
-    gh = import ./gh.nix {inherit config pkgs;};
-    jq = import ./jq.nix {inherit config pkgs;};
-    mcfly = import ./mcfly.nix {inherit config pkgs;};
-    navi = import ./navi.nix {inherit config pkgs;};
-    starship = import ./starship.nix {inherit config pkgs;};
-    thefuck = import ./thefuck.nix {inherit config pkgs;};
-    zoxide = import ./zoxide.nix {inherit config pkgs;};
-    zsh = import ./zsh.nix {inherit config pkgs;};
-  };
-
-  # Packages that should be installed to the user profile.
-  home.packages = [
-    pkgs.pingu
-  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

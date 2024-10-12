@@ -13,6 +13,7 @@
   dirHashes = {
     d = "$HOME/Developer";
     g = "$HOME/Developer/gigs";
+    dot = "$HOME/dotfiles";
   };
 
   autosuggestion = {
@@ -27,7 +28,7 @@
     enable = true;
   };
 
-  # zprof = { enable = true; };
+  # zprof.enable = true;
 
   shellAliases = {
     tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
@@ -67,7 +68,7 @@
     unsetopt rm_star_silent
     setopt rm_star_wait
 
-    bindkey '^n' navi_widget
+    bindkey '^n' _navi_widget
 
     # zstyle default stolen here:
     # https://www.reddit.com/r/zsh/comments/1874tlq/comment/kbdsxwu/

@@ -8,22 +8,36 @@
   };
 
   extraConfig = {
-    pull = {
-      rebase = true;
-    };
-    push = {
-      default = "simple";
-    };
-    init = {
-      defaultBranch = "main";
-    };
+    pull.rebase = true;
+    push.default = "simple";
+    init.defaultBranch = "main";
+    merge.conflictstyle = "diff3";
     core = {
-      excludesfile = "~/.gitignore_global";
+      excludesfile = builtins.toFile "gitignore_global" ''
+        .tool-versions
+        .envrc
+        shell.nix
+        *.DS_Store
+        .AppleDouble
+        .LSOverride
+        .vscode
+        ._*
+        .DocumentRevisions-V100
+        .fseventsd
+        .Spotlight-V100
+        .TemporaryItems
+        .Trashes
+        .VolumeIcon.icns
+        .com.apple.timemachine.donotpresent
+        .AppleDB
+        .AppleDesktop
+        Network Trash Folder
+        Temporary Items
+        .apdisk
+        .tags
+      '';
       editor = "code --wait";
       ignorecase = false;
-    };
-    merge = {
-      conflictstyel = "diff3";
     };
   };
 
@@ -38,10 +52,8 @@
     {
       condition = "gitdir:~/Developer/gigs/";
       contents = {
-        user = {
-          name = "Timo Mämecke";
-          email = "timo@gigs.com";
-        };
+        user.name = "Timo Mämecke";
+        user.email = "timo@gigs.com";
       };
     }
   ];

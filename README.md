@@ -2,15 +2,15 @@
 
 My dotfiles configuration using nix, nix-darwin and home-manager.
 
-## Re-apply
+## Usage
+
+Re-apply changes with
 
 ```
 darwin-rebuild switch --flake .
 ```
 
-## Install
-
-Install using nix-darwin flake: https://github.com/LnL7/nix-darwin#flakes
+Requires nix-darwin: https://github.com/LnL7/nix-darwin#flakes
 
 ## Links
 

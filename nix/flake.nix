@@ -13,9 +13,6 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
   let
     configuration = { pkgs, config, ... }: {
-
-      nixpkgs.config.allowUnfree = true;
-
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
@@ -30,8 +27,6 @@
           pkgs.karabiner-elements
           pkgs.monitorcontrol
           pkgs.raycast
-          pkgs.starship
-          pkgs.zoxide
         ];
       
       fonts.packages =
@@ -66,14 +61,17 @@
           # "proxyman"
         ];
         brews = [
-          "ccat"
+          # "something"
         ];
         masApps = {
           "System Color Picker" = 1545870783;
           "Pandan" = 1569600264;
           "Pixelmator Pro" = 1289583905;
         };
+
+        # Delete everything from brew which isn't specified
         # onActivation.cleanup = "zap";
+
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
       };
@@ -83,56 +81,66 @@
         home = "/Users/timomeh";
       };
 
-      # Create /etc/zshrc that loads the nix-darwin environment.
-      programs.zsh.enable = true;  # default shell on catalina
-      # programs.fish.enable = true;
+      programs = {
+        # Create /etc/zshrc that loads the nix-darwin environment.
+        zsh.enable = true;
+      };
 
-      home-manager.backupFileExtension = "backup";
+      services = {
+        # Auto upgrade nix package and the daemon service.
+        nix-daemon.enable = true;
+      };
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
+      home-manager = {
+        backupFileExtension = "backup";
+      };
 
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
+      nix = {
+        # Necessary for using flakes on this system.
+        settings.experimental-features = "nix-command flakes";
+      };
 
-      # build users that are not currently in the system
-      nix.configureBuildUsers = true;
+      nixpkgs = {
+        # It's okay to install unfree packages from nixpkgs
+        config.allowUnfree = true;
+        # The platform to use
+        hostPlatform = "aarch64-darwin";
+      };
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+      system = {
+        # Set Git commit hash for darwin-version.
+        configurationRevision = self.rev or self.dirtyRev or null;
 
-      system.activationScripts.applications.text = let
-        env = pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
-        };
-      in
-        pkgs.lib.mkForce ''
-        # Set up applications.
-        echo "setting up /Applications..." >&2
-        rm -rf /Applications/Nix\ Apps
-        mkdir -p /Applications/Nix\ Apps
-        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read src; do
-          app_name=$(basename "$src")
-          echo "copying $src" >&2
-          ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-        done
-      '';
+        # Used for backwards compatibility, please read the changelog before changing.
+        # $ darwin-rebuild changelog
+        stateVersion = 5;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
-
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+        # Setup aliases from apps in /Applications/Nix Apps/* to /Applications/*
+        activationScripts.applications.text = let
+          env = pkgs.buildEnv {
+            name = "system-applications";
+            paths = config.environment.systemPackages;
+            pathsToLink = "/Applications";
+          };
+        in
+          pkgs.lib.mkForce ''
+          # Set up applications.
+          echo "setting up /Applications..." >&2
+          rm -rf /Applications/Nix\ Apps
+          mkdir -p /Applications/Nix\ Apps
+          find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+          while read src; do
+            app_name=$(basename "$src")
+            echo "copying $src" >&2
+            ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+          done
+        '';
+      };
     };
   in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build
+    # $ darwin-rebuild build --flake .
     darwinConfigurations."Timos-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
 
@@ -152,9 +160,11 @@
         }
         home-manager.darwinModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.timomeh = import ./home/home.nix;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.timomeh = import ./home/home.nix;
+          };
         }
       ];
     };

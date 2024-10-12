@@ -24,5 +24,8 @@
     directory = {
       style = "bold blue";
     };
+    nix_shell = {
+      disabled = true;
+    };
   };
 }
