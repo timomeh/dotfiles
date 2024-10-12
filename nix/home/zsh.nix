@@ -57,6 +57,14 @@
 
   defaultKeymap = "emacs";
 
+  plugins = [
+    {
+      name = "powerlevel10k";
+      src = pkgs.zsh-powerlevel10k;
+      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+    }
+  ];
+
   initExtra = ''
     setopt globdots
     setopt auto_pushd # Make cd push the old directory to the directory stack.
@@ -69,6 +77,8 @@
     setopt rm_star_wait
 
     bindkey '^n' _navi_widget
+
+    [[ ! -f ${./p10k.zsh} ]] || source ${./p10k.zsh}
 
     # zstyle default stolen here:
     # https://www.reddit.com/r/zsh/comments/1874tlq/comment/kbdsxwu/

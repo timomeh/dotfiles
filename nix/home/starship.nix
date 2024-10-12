@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  enable = true;
+  enable = false;
   settings = {
     add_newline = true;
     format = "$all$fill$time$line_break$character";
