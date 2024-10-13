@@ -1,4 +1,5 @@
 { config, pkgs, ... }: {
+  # disable starship for now in favor of p10k because starship is a bit slower
   enable = false;
   settings = {
     add_newline = true;
