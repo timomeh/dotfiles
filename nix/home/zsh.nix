@@ -28,6 +28,7 @@
     enable = true;
   };
 
+  # enable profiling
   # zprof.enable = true;
 
   shellAliases = {

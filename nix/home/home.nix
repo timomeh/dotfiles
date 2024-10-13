@@ -1,5 +1,10 @@
 { config, pkgs, inputs, ... }:
-
+let
+  # Installing global npm packages (if I need them) to the home directory.
+  # I usually don't use them anyways, or they're not really important.
+  # See also: https://nixos.wiki/wiki/Node.js#Install_to_your_home
+  npm_global_path = "$HOME/.npm-global";
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -57,9 +62,17 @@
     zsh = import ./zsh.nix {inherit config pkgs;};
   };
 
+  # manages $PATH
   home.sessionPath = [
-    "$HOME/.npm-global"
+    npm_global_path
   ];
+
+  home.sessionVariables = {
+    # I'm managing npm config in environment variables because ~/.npmrc includes
+    # secret tokens. All npm config goes into `npm_config_` environment variables.
+    # The ~/.npmrc will be only treated only for tokens and is not tracked with nix.
+    npm_config_prefix = npm_global_path;
+  };
 
   # Packages that should be installed to the user profile.
   home.packages = [
@@ -69,34 +82,6 @@
   home.file.".config/navi_cheats".source = ./navi_cheats;
   home.file.".local/bin/gigs".source = ./bin/gigs;
   home.file.".local/bin/gurl".source = ./bin/gurl;
-
-  home.file.".finicky.js".text = ''
-    // Use https://finicky-kickstart.now.sh to generate basic configuration
-    // Learn more about configuration options: https://github.com/johnste/finicky/wiki/Configuration
-
-    module.exports = {
-      defaultBrowser: "Arc",
-      handlers: [
-        // always open Google Cloud as Gigs
-        {
-          match: ({ url }) => url.host.includes('cloud.google.com'),
-          browser: { 
-            name: "Arc",
-            profile: "Work"
-          }
-        },
-
-        // always open Google Meet as Gigs
-        {
-          match: ({ url }) => url.host.includes('meet.google.com'),
-          browser: { 
-            name: "Arc",
-            profile: "Work"
-          }
-        }
-      ],
-    }
-  '';
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
