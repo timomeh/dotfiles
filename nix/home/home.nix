@@ -57,6 +57,10 @@
     zsh = import ./zsh.nix {inherit config pkgs;};
   };
 
+  home.sessionPath = [
+    "$HOME/.npm-global"
+  ];
+
   # Packages that should be installed to the user profile.
   home.packages = [
     pkgs.pingu
