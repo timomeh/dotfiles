@@ -16,6 +16,7 @@
       excludesfile = builtins.toFile "gitignore_global" ''
         .tool-versions
         .envrc
+        .direnv
         shell.nix
         *.DS_Store
         .AppleDouble

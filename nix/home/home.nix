@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -54,7 +54,6 @@
     git = import ./git.nix {inherit config pkgs;};
     starship = import ./starship.nix {inherit config pkgs;};
     mcfly = import ./mcfly.nix {inherit config pkgs;};
-    mise = import ./mise.nix {inherit config pkgs;};
     zsh = import ./zsh.nix {inherit config pkgs;};
   };
 

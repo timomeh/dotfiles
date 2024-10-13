@@ -27,6 +27,8 @@
           pkgs.karabiner-elements
           pkgs.monitorcontrol
           pkgs.raycast
+          pkgs.nodejs_20
+          pkgs.corepack
         ];
       
       fonts.packages =
