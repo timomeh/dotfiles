@@ -1,6 +1,7 @@
 # dotfiles
 
-My dotfiles configuration using nix, nix-darwin and home-manager.
+My dotfiles configuration using nix, nix-darwin and home-manager. Let's pretend
+I know what I'm doing here.
 
 ## Usage
 
