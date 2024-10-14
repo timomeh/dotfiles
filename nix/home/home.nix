@@ -65,6 +65,7 @@ in
   # manages $PATH
   home.sessionPath = [
     npm_global_path
+    "/Users/timomeh/.local/bin"
   ];
 
   home.sessionVariables = {
