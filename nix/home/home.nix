@@ -71,7 +71,7 @@ in
   home.sessionVariables = {
     # I'm managing npm config in environment variables because ~/.npmrc includes
     # secret tokens. All npm config goes into `npm_config_` environment variables.
-    # The ~/.npmrc will be only treated only for tokens and is not tracked with nix.
+    # The ~/.npmrc will be only treated for accounts and is not managed by nix.
     npm_config_prefix = npm_global_path;
   };
 
