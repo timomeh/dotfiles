@@ -64,7 +64,7 @@ in
 
   # manages $PATH
   home.sessionPath = [
-    npm_global_path
+    "${npm_global_path}/bin"
     "/Users/timomeh/.local/bin"
   ];
 
