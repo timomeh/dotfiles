@@ -1,4 +1,0 @@
-% ffmpeg, timo
-
-# Transcode a video file with H264 without scale
-ffmpeg -i <input> -acodec aac -vcodec h264 <output>

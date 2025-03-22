@@ -1,20 +1,17 @@
 # dotfiles
 
-My dotfiles configuration using nix, nix-darwin and home-manager. Let's pretend
-I know what I'm doing here.
+Dotfiles. fish & stow.
 
-## Usage
+## Workflows
 
-Re-apply changes with
+To add a new dotfile:
 
+```console
+stow .
 ```
-darwin-rebuild switch --flake .
+
+To track an existing file as a dotfile, create the empty file in the dotfiles directory, then run:
+
+```console
+stow --adopt .
 ```
-
-Requires nix-darwin: https://github.com/LnL7/nix-darwin#flakes
-
-## Links
-
-- https://nixos.wiki/wiki/Zsh
-- https://mynixos.com/home-manager/options/programs
-- https://search.nixos.org/

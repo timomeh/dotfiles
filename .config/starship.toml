@@ -1,0 +1,21 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = "$all$fill$time$line_break$character"
+
+[gcloud]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[time]
+disabled = false
+format = " $time(bold blue) "
+
+[fill]
+style = "dimmed bright-black"
+symbol = "·"
+
+[character]
+error_symbol = "[▼](bold red)"
+success_symbol = "[▲](dimmed blue)"
