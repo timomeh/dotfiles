@@ -1,2 +1,3 @@
 [tools]
+"aqua:hashicorp/terraform" = "latest"
 node = "22"
