@@ -1,10 +1,10 @@
 [user]
-  name = "Timo Mämecke"
-  email = "timo@maemecke.com"
-  signingkey = "D04120C573EE73EB"
+  name = Timo Mämecke
+  email = timo@maemecke.com
+  signingkey = D04120C573EE73EB
 
 [includeIf "gitdir:~/Developer/gigs/"]
-    path = ~/.config/git/config_gigs
+  path = ~/.config/git/config_gigs
 
 [core]
   excludesfile = ~/.config/git/gitignore_global
