@@ -8,7 +8,7 @@ window-padding-balance = true
 window-inherit-working-directory = true
 macos-titlebar-style = transparent
 macos-icon = blueprint
-keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:cmd+ctrl+grave_accent=toggle_quick_terminal
 quick-terminal-screen = macos-menu-bar
 quick-terminal-autohide = false
 quick-terminal-position = right
