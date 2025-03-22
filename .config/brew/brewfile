@@ -7,6 +7,7 @@ brew "ffmpeg"
 brew "fish"
 brew "fzf"
 brew "git-delta"
+brew "gh"
 brew "less"
 brew "mas"
 brew "mcfly"
@@ -37,7 +38,6 @@ cask "telegram"
 cask "visual-studio-code"
 cask "whatsapp"
 cask "zoom"
-mas "Brother iPrint&Scan", id: 1193539993
 mas "Color Picker", id: 1545870783
 mas "Dropover", id: 1355679052
 mas "GarageBand", id: 682658836
@@ -49,22 +49,17 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pandan", id: 1569600264
 mas "Pixelmator Pro", id: 1289583905
-mas "QR Code", id: 6469319539
 mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "Xcode", id: 497799835
-vscode "akamud.vscode-theme-onedark"
 vscode "alefragnani.bookmarks"
 vscode "alefragnani.project-manager"
 vscode "alexdauenhauer.catppuccin-noctis"
-vscode "amazonwebservices.codewhisperer-for-command-line-companion"
 vscode "austenc.tailwind-docs"
-vscode "bbenoist.nix"
 vscode "be5invis.toml"
 vscode "be5invis.vscode-icontheme-nomo-dark"
 vscode "bradlc.vscode-tailwindcss"
 vscode "britesnow.vscode-toggle-quotes"
-vscode "catppuccin.catppuccin-vsc"
 vscode "christian-kohler.npm-intellisense"
 vscode "christian-kohler.path-intellisense"
 vscode "cssho.vscode-svgviewer"
@@ -78,7 +73,6 @@ vscode "esbenp.prettier-vscode"
 vscode "eternal.tokyo-night-horizon"
 vscode "hashicorp.terraform"
 vscode "jakearl.search-editor-apply-changes"
-vscode "johnpapa.vscode-peacock"
 vscode "kamikillerto.vscode-colorize"
 vscode "kevinkyang.auto-comment-blocks"
 vscode "lokalise.i18n-ally"
@@ -102,15 +96,10 @@ vscode "sburg.vscode-javascript-booster"
 vscode "sleistner.vscode-fileutils"
 vscode "stkb.rewrap"
 vscode "streetsidesoftware.code-spell-checker"
-vscode "teabyii.ayu"
-vscode "timgrochowski.valley-vscode"
 vscode "timomeh.git-notch"
 vscode "tobermory.es6-string-html"
-vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vscode-icons-team.vscode-icons"
-vscode "wayou.vscode-todo-highlight"
 vscode "whizkydee.material-palenight-theme"
 vscode "yoavbls.pretty-ts-errors"
 vscode "yzhang.markdown-all-in-one"
-brew "gh"
