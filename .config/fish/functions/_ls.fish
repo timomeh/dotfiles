@@ -1,3 +1,6 @@
+# function _ls will call eza with some defaults.
+# used to create an alias for ls
+
 function _ls
   set -lx params \
     --git \
