@@ -5,5 +5,5 @@
 # which returns all aliases.
 
 for alias in (git wat | string match -r '^[^=]+' | string trim)
-  alias "g$alias" "git $alias"
+  abbr -a "g$alias" "git $alias"
 end
