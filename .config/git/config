@@ -12,6 +12,15 @@
   pager = delta
   ignorecase = false
 
+[url "git@github.com:timomeh/"]
+  insteadOf = "timomeh:"
+
+[url "git@github.com:gigs/"]
+  insteadOf = "gigs:"
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
+
 [init]
   defaultBranch = main
 
