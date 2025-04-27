@@ -7,7 +7,7 @@
   path = ~/.config/git/config_gigs
 
 [core]
-  excludesfile = ~/.config/git/gitignore_global
+  compression = 9
   editor = code --wait
   pager = delta
   ignorecase = false
@@ -28,11 +28,21 @@
   rebase = true
 
 [push]
-  default = simple
+  default = current
+  followTags = true
+
+[status]
+  branch = true
+  showStash = true
+
+[rebase]
+  autoStash = true
+  missingCommitsCheck = warn
 
 [diff]
   colorMoved = default
   tool = default-difftool
+  renames = copies
 
 [delta]
   navigate = true
@@ -43,12 +53,26 @@
 [interactive]
   diffFilter = delta --color-only
 
+[pager]
+  branch = false
+  tag = false
+
+[log]
+  abbrevCommit = true
+  graphColors = blue,yellow,cyan,magenta,green,red
+
 [color]
   ui = true
   ignorecase = false
 
+[color "decorate"]
+  HEAD = red
+  branch = blue
+  tag = yellow
+  remoteBranch = magenta
+
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
 [color "diff-highlight"]
   oldNormal = red bold
@@ -64,11 +88,24 @@
   new = green bold
   whitespace = red reverse
 
+[color "branch"]
+  current = magenta
+  local = default
+  remote = yellow
+  upstream = green
+  plain = blue
+
+[branch]
+  sort = -comitterdate
+
+[tag]
+  sort = -taggerdate
+
 [alias]
   lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
   lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   lg = !"git lg1"
-  l = !"git lg1"
+  l = !"git log --graph --all --pretty=format:'%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n'"
   wip = !"[[ $(git log -1 --pretty=%B) == \"WIP\" ]] && (git reset --soft \"HEAD^\") || (git add . && git commit -m \"WIP\")"
 
   ps = push
@@ -76,6 +113,7 @@
 
   a = add
   aa = add -A
+  ap = add --patch
   c = commit --verbose
   ca = commit -a --verbose
   cm = commit -m
