@@ -1,8 +1,6 @@
 [tools]
-"aqua:hashicorp/terraform" = "latest"
 go = "latest"
 node = "22"
-"npm:@elgato/cli" = "latest"
 
 [hooks]
 postinstall = 'corepack enable'
