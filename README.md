@@ -8,8 +8,6 @@ Dotfiles. Mainly centered around 🐟 fish, 🐐 stow, 🍺 brew and 🧑‍🍳
 - `ls` is eza
 - `ping` is pingu, noot noot
 - `fuck` for fuckups
-- `rm` is disabled and will nope out
-- `rrm` for rm when you really mean it
 - `navi` with <kbd>Ctrl-g</kbd>
 - `mcfly` with <kbd>Ctrl-r</kbd>
 - Search directory with <kbd>Ctrl-Alt-F</kbd>
