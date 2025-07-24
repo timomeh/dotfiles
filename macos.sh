@@ -39,11 +39,16 @@ defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 
 # Finder view
 defaults write com.apple.finder "ShowPathbar" -bool "true"
+defaults write com.apple.finder ShowRecentTags -bool false
+defaults write com.apple.finder ShowSidebar -bool true
 defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv" # column view
 defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true" # folders first
 defaults write com.apple.finder "FinderSpawnTab" -bool "false" # don't use tabs with cmd-click
 defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf" # search in current dir
 defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false" # don't warn when changing an extension
+defaults write com.apple.finder FXICloudDriveDesktop -bool false
+defaults write com.apple.finder FXICloudDriveDocuments -bool false
+defaults write com.apple.finder FXICloudDriveEnabled -bool true
 defaults write NSGlobalDomain "NSToolbarTitleViewRolloverDelay" -float "0" # instant rollover in finder toolbar
 defaults write NSGlobalDomain "NSTableViewDefaultSizeMode" -int "2" # finder sidebar icon size
 
@@ -62,8 +67,32 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -
 
 # Keyboard
 defaults write com.apple.HIToolbox AppleFnUsageType -int "0" # do nothing when Fn or 🌐︎ key is held
+defaults write -globalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write -globalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write -globalDomain NSAutomaticInlinePredictionEnabled -bool false
+defaults write -globalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write -globalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write -globalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write -globalDomain WebAutomaticSpellingCorrectionEnabled -bool false
 
 # Mission control
 defaults write com.apple.dock "mru-spaces" -bool "false" # don't rearrange spaces automatically
 
 defaults write com.apple.CloudSubscriptionFeatures.optIn "545129924" -bool "false" # deactivate apple intelligence
+
+# Spaces
+defaults write com.apple.spaces app-bindings -dict net.whatsapp.whatsapp ''\
+                                                       ru.keepcoder.telegram '' \
+                                                       com.hnc.discord '' \
+                                                       com.mimestream.mimestream ''
+
+# com.superultra.Homerow
+defaults write com.superultra.Homerow 'NSStatusItem Visible Item-0' -bool false
+defaults write com.superultra.Homerow SUHasLaunchedBefore -bool true
+defaults write com.superultra.Homerow activation-count -int 2
+defaults write com.superultra.Homerow launch-at-login -bool true
+defaults write com.superultra.Homerow show-menubar-icon -bool false
+
+# com.sindresorhus.Menu-Bar-Spacing
+defaults write com.sindresorhus.Menu-Bar-Spacing SS_launchCount -int 1
+defaults write com.sindresorhus.Menu-Bar-Spacing SUHasLaunchedBefore -bool true
