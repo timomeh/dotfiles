@@ -18,7 +18,7 @@ finder:
 cheats:
   paths:
     - ~/.config/navi/cheats.d
-    - ~/Library/Application Support/navi
+    - ~/.local/share/navi/cheats
 
 # search:
 #   tags: git,!checkout # equivalent to the --tag-rules option
