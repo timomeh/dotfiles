@@ -7,6 +7,7 @@ brew "fd"
 brew "ffmpeg"
 brew "fish"
 brew "fzf"
+brew "git"
 brew "git-delta"
 brew "gh"
 brew "less"
@@ -21,11 +22,17 @@ brew "thefuck"
 brew "zoxide"
 brew "ripgrep"
 brew "doggo"
-cask "cleanshot"
-cask "firefox"
+
+brew "pipx",
+     postinstall: "pipx install macprefs"
+
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
+
+cask "arc"
+cask "cleanshot"
+cask "firefox"
 cask "ghostty"
 cask "google-chrome"
 cask "google-drive"
@@ -53,6 +60,7 @@ cask "tableplus"
 cask "via"
 cask "badgeify"
 cask "chatgpt"
+
 mas "Color Picker", id: 1545870783
 mas "Dropover", id: 1355679052
 mas "Keynote", id: 409183694
@@ -63,6 +71,7 @@ mas "Pixelmator Pro", id: 1289583905
 mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "Xcode", id: 497799835
+
 vscode "alefragnani.bookmarks"
 vscode "alefragnani.project-manager"
 vscode "alexdauenhauer.catppuccin-noctis"
@@ -112,3 +121,6 @@ vscode "vscode-icons-team.vscode-icons"
 vscode "whizkydee.material-palenight-theme"
 vscode "yoavbls.pretty-ts-errors"
 vscode "yzhang.markdown-all-in-one"
+vscode "dnut.rewrap-revived"
+vscode "vscodevim.vim"
+vscode "golang.go"
