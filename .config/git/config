@@ -1,7 +1,7 @@
 [user]
   name = Timo Mämecke
   email = timo@maemecke.com
-  signingkey = D04120C573EE73EB
+  signingkey = 869C3E488F94E173
 
 [includeIf "gitdir:~/Developer/gigs/"]
   path = ~/.config/git/config_gigs
