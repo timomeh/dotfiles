@@ -3,8 +3,6 @@
   email = timo@maemecke.com
   signingkey = 869C3E488F94E173
 
-[includeIf "gitdir:~/Developer/gigs/"]
-  path = ~/.config/git/config_gigs
 
 [core]
   compression = 9
@@ -15,8 +13,6 @@
 [url "git@github.com:timomeh/"]
   insteadOf = "timomeh:"
 
-[url "git@github.com:gigs/"]
-  insteadOf = "gigs:"
 
 [url "git@github.com:"]
   insteadOf = "gh:"
