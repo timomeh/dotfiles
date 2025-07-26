@@ -1,7 +1,4 @@
 brew "bat"
-brew "docker"
-brew "docker-compose"
-brew "colima"
 brew "eza"
 brew "fd"
 brew "ffmpeg"
@@ -31,6 +28,7 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 
 cask "arc"
+cask "docker-desktop"
 cask "cleanshot"
 cask "firefox"
 cask "ghostty"
@@ -60,6 +58,7 @@ cask "tableplus"
 cask "via"
 cask "badgeify"
 cask "chatgpt"
+cask "zen"
 
 mas "Color Picker", id: 1545870783
 mas "Dropover", id: 1355679052
