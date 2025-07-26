@@ -3,6 +3,8 @@
   email = timo@maemecke.com
   signingkey = 869C3E488F94E173
 
+[includeIf "gitdir:~/Developer/railway/"]
+  path = ~/.config/git/config_railway
 
 [core]
   compression = 9
@@ -13,6 +15,8 @@
 [url "git@github.com:timomeh/"]
   insteadOf = "timomeh:"
 
+[url "git@github.com:railway/"]
+  insteadOf = "railway:"
 
 [url "git@github.com:"]
   insteadOf = "gh:"
