@@ -23,7 +23,7 @@ brew "lazygit"
 brew "gnupg"
 
 brew "pipx",
-     postinstall: "pipx install macprefs"
+     postinstall: "${HOMEBREW_PREFIX}/bin/pipx install macprefs"
 
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
