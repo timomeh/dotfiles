@@ -64,6 +64,7 @@ killall Finder
 defaults write NSGlobalDomain com.apple.mouse.scaling -float "1" # speed
 defaults write com.apple.AppleMultitouchMouse MouseButtonMode -string "TwoButton" # magic mouse should behave like two button mouse
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string "TwoButton"
+defaults write "CGDisableCursorLocationMagnification" "Apple Global Domain" -bool true # No zoom shaky cursor
 
 # Keyboard
 defaults write com.apple.HIToolbox AppleFnUsageType -int "0" # do nothing when Fn or 🌐︎ key is held
@@ -96,6 +97,3 @@ defaults write com.superultra.Homerow show-menubar-icon -bool false
 # com.sindresorhus.Menu-Bar-Spacing
 defaults write com.sindresorhus.Menu-Bar-Spacing SS_launchCount -int 1
 defaults write com.sindresorhus.Menu-Bar-Spacing SUHasLaunchedBefore -bool true
-
-# Shortcut settings (created by plistwatcher)
-defaults write "AppleSymbolicHotKeys" "com.apple.symbolichotkeys" '{118={enabled=1;value={parameters=(65535,18,262144,);type=standard;};};119={enabled=1;value={parameters=(65535,19,262144,);type=standard;};};120={enabled=1;value={parameters=(65535,20,262144,);type=standard;};};121={enabled=1;value={parameters=(65535,21,262144,);type=standard;};};122={enabled=1;value={parameters=(65535,23,262144,);type=standard;};};123={enabled=1;value={parameters=(65535,22,262144,);type=standard;};};15={enabled=0;};16={enabled=0;};164={enabled=0;value={parameters=(65535,65535,0,);type=standard;};};17={enabled=0;};175={enabled=0;value={parameters=(65535,65535,0,);type=standard;};};18={enabled=0;};184={enabled=0;value={parameters=(53,23,1179648,);type=standard;};};19={enabled=0;};190={enabled=0;value={parameters=(113,12,8388608,);type=standard;};};20={enabled=0;};21={enabled=0;};22={enabled=0;};222={enabled=0;value={parameters=(65535,65535,0,);type=standard;};};23={enabled=0;};24={enabled=0;};25={enabled=0;};26={enabled=0;};28={enabled=0;value={parameters=(51,20,1179648,);type=standard;};};29={enabled=0;value={parameters=(51,20,1441792,);type=standard;};};30={enabled=0;value={parameters=(52,21,1179648,);type=standard;};};31={enabled=1;value={parameters=(52,21,1441792,);type=standard;};};32={enabled=1;value={parameters=(51,20,1310720,);type=standard;};};33={enabled=0;value={parameters=(65535,125,8650752,);type=standard;};};34={enabled=1;value={parameters=(51,20,1441792,);type=standard;};};36={enabled=0;value={parameters=(65535,103,8388608,);type=standard;};};60={enabled=0;value={parameters=(32,49,262144,);type=standard;};};61={enabled=0;value={parameters=(32,49,786432,);type=standard;};};79={enabled=1;value={parameters=(65535,123,8650752,);type=standard;};};80={enabled=1;value={parameters=(65535,123,8781824,);type=standard;};};81={enabled=1;value={parameters=(65535,124,8650752,);type=standard;};};82={enabled=1;value={parameters=(65535,124,8781824,);type=standard;};};}'
