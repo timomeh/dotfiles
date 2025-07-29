@@ -57,6 +57,7 @@ cask "tableplus"
 cask "via"
 cask "badgeify"
 cask "chatgpt"
+cask "contexts"
 
 mas "Color Picker", id: 1545870783
 mas "Dropover", id: 1355679052
