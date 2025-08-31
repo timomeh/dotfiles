@@ -1,3 +1,5 @@
 direnv hook fish | source
 
-alias dev="/Users/timo/Developer/railway/mono/dev"
+set -x MISE_IDIOMATIC_VERSION_FILE_ENABLE_TOOLS "[]"
+
+alias dev="/Users/timo/Developer/work/mono/dev"

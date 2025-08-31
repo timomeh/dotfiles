@@ -1,9 +1,9 @@
-[env]
-_.path = ['./node_modules/.bin']
-
 [tools]
 node = "22"
 "npm:np" = "latest"
 
 [hooks]
 postinstall = "corepack enable"
+
+[env]
+_.path = ['./node_modules/.bin']
