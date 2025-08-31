@@ -3,8 +3,8 @@
   email = timo@maemecke.com
   signingkey = 869C3E488F94E173
 
-[includeIf "gitdir:~/Developer/railway/"]
-  path = ~/.config/git/config_railway
+[includeIf "gitdir:~/Developer/work/"]
+  path = ~/.config/git/config_work
 
 [core]
   compression = 9
@@ -96,7 +96,7 @@
   plain = blue
 
 [branch]
-  sort = -comitterdate
+  sort = -committerdate
 
 [tag]
   sort = -taggerdate

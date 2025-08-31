@@ -1,1 +1,2 @@
-.gitconfig_local
+.ssh/config_local
+.config/fish/config_local.fish

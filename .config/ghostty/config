@@ -12,3 +12,5 @@ macos-icon = blueprint
 # quick-terminal-screen = macos-menu-bar
 # quick-terminal-autohide = false
 # quick-terminal-position = right
+
+keybind = shift+enter=text:\x1b\r
