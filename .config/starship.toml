@@ -4,7 +4,6 @@ format = "$all $time$line_break$character"
 
 [directory]
 truncation_length = 4
-truncation_symbol = '…/'
 
 [git_status]
 ahead = '⇡${count}'
@@ -44,3 +43,12 @@ symbol = "·"
 [character]
 error_symbol = "[▼](bold red)"
 success_symbol = "[▲](dimmed blue)"
+
+[nix_shell]
+disabled = true
+
+[buf]
+disabled = true
+
+[package]
+disabled = true
