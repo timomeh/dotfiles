@@ -4,7 +4,9 @@ Dotfiles. Mainly centered around 🐟 fish, 🐐 stow, 🍺 brew and 🧑‍🍳
 
 ## Features
 
-- Different profiles
+- Support for different work & private profiles
+- zellij
+- starship prompt
 - `cd` is zoxide
 - `ls` is eza
 - `fuck` for fuckups
