@@ -7,7 +7,6 @@ Dotfiles. Mainly centered around 🐟 fish, 🐐 stow, 🍺 brew and 🧑‍🍳
 - Different profiles
 - `cd` is zoxide
 - `ls` is eza
-- `ping` is pingu, noot noot
 - `fuck` for fuckups
 - `navi` with <kbd>Ctrl-g</kbd>
 - `mcfly` with <kbd>Ctrl-r</kbd>

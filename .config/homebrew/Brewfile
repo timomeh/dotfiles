@@ -22,6 +22,7 @@ brew "doggo"
 brew "lazygit"
 brew "gnupg"
 brew "railway"
+brew "zellij"
 
 brew "pipx",
      postinstall: "${HOMEBREW_PREFIX}/bin/pipx install macprefs"
@@ -69,3 +70,4 @@ mas "Pixelmator Pro", id: 1289583905
 mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "Xcode", id: 497799835
+cask "orbstack"

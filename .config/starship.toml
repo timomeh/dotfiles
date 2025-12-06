@@ -1,6 +1,18 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = "$all$fill$time$line_break$character"
+format = "$all $time$line_break$character"
+
+[directory]
+truncation_length = 4
+truncation_symbol = '…/'
+
+[git_status]
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+
+[git_branch]
+symbol = ''
 
 [gcloud]
 disabled = true
@@ -8,9 +20,22 @@ disabled = true
 [docker_context]
 disabled = true
 
+[bun]
+disabled = true
+
+[nodejs]
+format = 'on [$symbol($version )]($style)'
+
 [time]
 disabled = false
-format = " $time(bold blue) "
+format = '[\[$time\]]($style)'
+style = "dimmed blue"
+
+[golang]
+disabled = true
+
+[helm]
+disabled = true
 
 [fill]
 style = "dimmed bright-black"

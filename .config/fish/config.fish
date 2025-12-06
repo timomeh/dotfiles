@@ -37,7 +37,7 @@ alias ls="_ls"
 alias ll="_ls --header --long"
 alias la="_ls --header --long --all --all"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-alias ping="pingu"
+alias zj="zellij"
 
 # path
 fish_add_path ~/.local/bin
@@ -67,4 +67,11 @@ end
 set -l local_profile_path ~/.config/fish/config_local.fish
 if test -f $local_profile_path
   source $local_profile_path
+end
+
+if status is-interactive
+  export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
+  if [ "$TERM" = "xterm-ghostty" ]
+    eval (zellij setup --generate-auto-start fish | string collect)
+  end
 end

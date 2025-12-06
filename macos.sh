@@ -36,6 +36,9 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 # Show hidden files in Finder
 defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
 
+# Drag any window with cmd-ctrl
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
 
 # Finder view
 defaults write com.apple.finder "ShowPathbar" -bool "true"
