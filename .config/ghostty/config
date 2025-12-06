@@ -9,6 +9,7 @@ window-decoration = true
 macos-icon = blueprint
 macos-option-as-alt = left
 window-save-state = always
+confirm-close-surface = false
 
 keybind = shift+enter=text:\x1b\r
 keybind = cmd+k=text:\x0c
