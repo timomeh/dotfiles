@@ -70,8 +70,15 @@ if test -f $local_profile_path
 end
 
 if status is-interactive
-  export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
   if [ "$TERM" = "xterm-ghostty" ]
-    eval (zellij setup --generate-auto-start fish | string collect)
+    set ZELLIJ_AUTO_EXIT true
+
+    if not set -q ZELLIJ
+      zellij attach -c pad
+
+      if test "$ZELLIJ_AUTO_EXIT" = "true"
+        kill $fish_pid
+      end
+    end
   end
 end
