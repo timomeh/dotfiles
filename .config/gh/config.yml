@@ -1,4 +1,4 @@
 version: "1"
 aliases:
-  co: pr checkout
-  pv: pr view
+    co: pr checkout
+    pv: pr view
