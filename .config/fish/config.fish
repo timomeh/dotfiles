@@ -74,7 +74,7 @@ if status is-interactive
     set ZELLIJ_AUTO_EXIT true
 
     if not set -q ZELLIJ
-      zellij attach -c pad
+      zellij attach -c (zellij_latest_session; or echo "pad")
 
       if test "$ZELLIJ_AUTO_EXIT" = "true"
         kill $fish_pid
