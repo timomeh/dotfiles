@@ -172,12 +172,6 @@ keybinds clear-defaults=true {
                 base_paths "/Users/timo/Developer/timo|/Users/timo/Developer/work"
             }
         }
-        bind "Ctrl l" {
-            Run "lazygit" {
-                floating true
-                close_on_exit true
-            }
-        }
     }
     normal {
         bind "Alt x" {
