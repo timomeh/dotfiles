@@ -14,8 +14,10 @@ keybind = shift+enter=text:\x1b\r
 keybind = cmd+k=text:\x0c
 keybind = cmd+t=unbind
 keybind = cmd+n=unbind
-keybind = cmd+c=unbind
+# keybind = cmd+c=unbind
 keybind = cmd+w=unbind
+keybind = cmd+d=unbind
+keybind = cmd+shift+d=unbind
 keybind = cmd+opt+left=unbind
 keybind = cmd+opt+right=unbind
 
