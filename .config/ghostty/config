@@ -15,9 +15,9 @@ keybind = cmd+k=text:\x0c
 keybind = cmd+t=unbind
 keybind = cmd+n=unbind
 # keybind = cmd+c=unbind
-keybind = cmd+w=unbind
-keybind = cmd+d=unbind
-keybind = cmd+shift+d=unbind
+keybind = cmd+w=text:\x1bx
+keybind = cmd+d=text:\x1bn
+keybind = cmd+shift+d=text:\x1bm
 keybind = cmd+opt+left=unbind
 keybind = cmd+opt+right=unbind
 keybind = alt+left=unbind

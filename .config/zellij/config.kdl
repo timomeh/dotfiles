@@ -138,10 +138,10 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Alt left" { MoveFocusOrTab "left"; }
-        bind "Alt down" { MoveFocus "down"; }
-        bind "Alt up" { MoveFocus "up"; }
-        bind "Alt right" { MoveFocusOrTab "right"; }
+        // bind "Alt left" { MoveFocusOrTab "left"; }
+        // bind "Alt down" { MoveFocus "down"; }
+        // bind "Alt up" { MoveFocus "up"; }
+        // bind "Alt right" { MoveFocusOrTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
@@ -154,6 +154,7 @@ keybinds clear-defaults=true {
         bind "Alt k" { MoveFocus "down"; }
         bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
+        bind "Alt m" { NewPane "Down"; }
         bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
