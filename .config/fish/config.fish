@@ -4,7 +4,7 @@ if not set -q FISH_PROFILE_NAME
   echo ""
   echo "🎏 FISH_PROFILE_NAME is not set."
   echo "   You can set it like this:"
-  echo "     set -Ux FISH_PROFILE_NAME timo"
+  echo "     set -Ux FISH_PROFILE_NAME <timo|work>"
   echo ""
 end
 
@@ -50,6 +50,7 @@ fish_add_path ~/Library/pnpm
 set -x VISUAL "code --wait"
 set -x HOMEBREW_NO_ANALYTICS 1
 set -x HOMEBREW_BUNDLE_DUMP_NO_VSCODE 1
+set -x HOMEBREW_BUNDLE_FILE ~/.config/homebrew/Brewfile
 
 if not set -q XDG_CONFIG_HOME
   set -x XDG_CONFIG_HOME ~/.config

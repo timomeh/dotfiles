@@ -23,7 +23,6 @@ brew "lazygit"
 brew "gnupg"
 brew "railway"
 brew "zellij"
-
 brew "pipx",
      postinstall: "${HOMEBREW_PREFIX}/bin/pipx install macprefs"
 
@@ -64,12 +63,9 @@ cask "orbstack"
 cask "claude-code"
 
 mas "Color Picker", id: 1545870783
-mas "Dropover", id: 1355679052
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pandan", id: 1569600264
 mas "Pixelmator Pro", id: 1289583905
 mas "Tailscale", id: 1475387142
-mas "TestFlight", id: 899247664
-mas "Xcode", id: 497799835
