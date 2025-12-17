@@ -18,6 +18,7 @@ Dotfiles. Mainly centered around 🐟 fish, 🐐 stow, 🍺 brew and 🧑‍🍳
 - Search processes with <kbd>Ctrl-Alt-P</kbd>
 - Search variables with <kbd>Ctrl-V</kbd>
 - `g[alias]` abbreviates to `git [alias]`
+- macos config backups
 
 ## Workflows
 
@@ -25,14 +26,20 @@ Dotfiles. Mainly centered around 🐟 fish, 🐐 stow, 🍺 brew and 🧑‍🍳
 
 Hey future me! For a complete fresh setup:
 
-1. Run `xcode-select --install` to install git
+1. Run `xcode-select --install` to install whatever macOS needs
 2. Install homebrew
 3. Clone this repo into your home directory (~/dotfiles)
-4. `cd ~/dotfiles && stow --no-folding .`
-5. `~/dotfiles/macos.sh`
-6. `brew bundle`
+4. `dot pull`
+5. `brew bundle`
+6. Go to https://github.com/timomeh/macos-defaults to restore macOS settings
 
 ### Usage
+
+```
+dot sync
+dot adopt
+dot pull
+```
 
 #### Add a new file
 
@@ -44,6 +51,8 @@ dot sync
 # This will run: stow --no-folding .
 ```
 
+This will create a symlink into the home directory.
+
 #### Add an existing non-tracked file
 
 To track an existing file in the home directory, create an empty file in this project as if the project root were the home directory. Then run:
@@ -54,37 +63,32 @@ dot adopt
 # This will run: stow --adopt .
 ```
 
+This will copy the file contents into the dotfile directory and turn it into a link.
+
 #### Pull changes
 
 ```console
 dot pull
-
-# This will do a git pull of the dotfiles repo and then run sync
 ```
 
-### Use brew bundle
+This will do a git pull of the dotfiles repo and then run a sync.
 
-Use `brew bundle [-g] [add|remove|cleanup|install]` to manage installations via brew, so the brewfile is automatically updates. [Read more][brew]
+### Brew Bundle
 
-- Run inside `~/Developer/[profile]` to install for the current machine
-- Run with `-g` to install for all machines
-
-[brew]: https://docs.brew.sh/Manpage#bundle-subcommand
+Use `brew bundle [add|remove|cleanup|install]` to manage installations via brew, so the brewfile is automatically updates. [Read more](https://docs.brew.sh/Manpage#bundle-subcommand)
 
 ### macOS Settings
 
 To backup the current macos settings, run:
 
 ```console
-prefs-export --output-directory ~/.config/defaults
+macos_defaults
 ```
 
-Then look into the output directory's `exec-defaults.sh` file and copy the defaults to `macos.sh`.
+It automatically commits and pushs into https://github.com/timomeh/macos-defaults 🔒
 
 ## Background
 
-I can run those dotfiles on different machines with different configurations based on the `FISH_PROFILE_NAME` environment variable.
-
-I use Homebrew (via brew bundle) for everything where I just want the latest version.
-
-I use mise for stuff where I'm interested in a specific version, or for global npm packages.
+- I can run those dotfiles on different machines with different configurations based on the `FISH_PROFILE_NAME` environment variable.
+- I use Homebrew (via brew bundle) for everything where I just want the latest version.
+- I use mise for stuff where I'm interested in a specific version, or for global npm packages.
