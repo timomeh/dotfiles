@@ -4,25 +4,27 @@ window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
 window-inherit-working-directory = true
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
 window-decoration = true
 macos-icon = blueprint
 macos-option-as-alt = left
 window-save-state = always
 confirm-close-surface = false
+unfocused-split-opacity = 1
+copy-on-select = clipboard
 
-keybind = shift+enter=text:\x1b\r
-keybind = cmd+k=text:\x0c
-keybind = cmd+t=unbind
-keybind = cmd+n=unbind
+# keybind = shift+enter=text:\x1b\r
+# keybind = cmd+k=text:\x0c
+# keybind = cmd+t=unbind
+# keybind = cmd+n=unbind
 # keybind = cmd+c=unbind
-keybind = cmd+w=text:\x1bx
-keybind = cmd+d=text:\x1bn
-keybind = cmd+shift+d=text:\x1bm
-keybind = cmd+opt+left=unbind
-keybind = cmd+opt+right=unbind
-keybind = alt+left=unbind
-keybind = alt+right=unbind
+# keybind = cmd+w=text:\x1bx
+# keybind = cmd+d=text:\x1bn
+# keybind = cmd+shift+d=text:\x1bm
+# keybind = cmd+opt+left=unbind
+# keybind = cmd+opt+right=unbind
+# keybind = alt+left=unbind
+# keybind = alt+right=unbind
 
 # keybind = global:cmd+ctrl+grave_accent=toggle_quick_terminal
 # quick-terminal-screen = macos-menu-bar

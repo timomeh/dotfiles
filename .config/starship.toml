@@ -22,6 +22,15 @@ disabled = true
 [bun]
 disabled = true
 
+[gradle]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[java]
+disabled = true
+
 [nodejs]
 format = 'on [$symbol($version )]($style)'
 

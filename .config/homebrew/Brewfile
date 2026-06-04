@@ -21,7 +21,6 @@ brew "ripgrep"
 brew "doggo"
 brew "lazygit"
 brew "gnupg"
-brew "railway"
 brew "zellij"
 brew "pipx",
      postinstall: "${HOMEBREW_PREFIX}/bin/pipx install macprefs"
@@ -30,15 +29,12 @@ cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 
-cask "arc"
-cask "cleanshot"
 cask "ghostty"
 cask "google-chrome"
 cask "google-drive"
 cask "spotify"
 cask "sublime-text"
 cask "telegram"
-cask "visual-studio-code"
 cask "whatsapp"
 cask "proxy-audio-device"
 cask "hiddenbar"
@@ -60,12 +56,11 @@ cask "chatgpt"
 cask "contexts"
 cask "logi-options+"
 cask "orbstack"
-cask "claude-code"
+cask "opencode"
+cask "openlogi"
 
-mas "Color Picker", id: 1545870783
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pandan", id: 1569600264
 mas "Pixelmator Pro", id: 1289583905
-mas "Tailscale", id: 1475387142
