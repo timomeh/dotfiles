@@ -19,6 +19,7 @@ abbr -a bb brew bundle
 abbr -a pn pnpm
 abbr -a lg lazygit
 abbr -a z zed
+abbr -a oc opencode
 
 # generate abbreviations for all git aliases: g[alias] -> git [alias]
 for alias in (git wat | string match -r '^[^=]+' | string trim)
