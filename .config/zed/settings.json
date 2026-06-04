@@ -147,7 +147,7 @@
     "git_status_indicator": true,
     "diagnostic_badges": false,
     "bold_folder_labels": false,
-    "hide_root": true,
+    "hide_root": false,
     "hide_hidden": false,
     "auto_fold_dirs": false,
     "auto_reveal_entries": true,
