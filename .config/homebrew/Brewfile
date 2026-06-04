@@ -39,6 +39,7 @@ cask "spotify"
 cask "sublime-text"
 cask "telegram"
 cask "whatsapp"
+cask "signal"
 cask "proxy-audio-device"
 cask "hiddenbar"
 cask "1password"
@@ -61,8 +62,5 @@ cask "logi-options+"
 cask "orbstack"
 cask "openlogi"
 
-mas "Keynote", id: 409183694
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pandan", id: 1569600264
 mas "Pixelmator Pro", id: 1289583905
