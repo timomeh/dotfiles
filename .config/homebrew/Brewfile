@@ -33,7 +33,6 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 
 cask "ghostty"
-cask "google-chrome"
 cask "google-drive"
 cask "spotify"
 cask "sublime-text"
