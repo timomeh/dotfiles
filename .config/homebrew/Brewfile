@@ -1,3 +1,5 @@
+tap "anomalyco/tap"
+
 brew "bat"
 brew "eza"
 brew "fd"
@@ -12,6 +14,7 @@ brew "mas"
 brew "mcfly"
 brew "mise"
 brew "navi"
+brew "opencode"
 brew "pinentry-mac"
 brew "starship"
 brew "stow"
@@ -56,7 +59,6 @@ cask "chatgpt"
 cask "contexts"
 cask "logi-options+"
 cask "orbstack"
-cask "opencode"
 cask "openlogi"
 
 mas "Keynote", id: 409183694
