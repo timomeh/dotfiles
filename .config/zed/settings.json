@@ -7,6 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "inline_code_actions": true,
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "double_click_in_multibuffer": "open",
   "soft_wrap": "none",
   "show_wrap_guides": true,
   "wrap_guides": [80],
@@ -73,8 +80,14 @@
     "dock": "left"
   },
   "git_panel": {
+    "show_count_badge": false,
+    "file_icons": false,
+    "tree_view": false,
+    "collapse_untracked_diff": false,
+    "sort_by_path": false,
+    "default_width": 420.0,
     "status_style": "icon",
-    "dock": "left"
+    "dock": "right"
   },
   "edit_predictions": {
     "mode": "eager"
@@ -123,6 +136,9 @@
     "button": false
   },
   "diagnostics": {
+    "inline": {
+      "enabled": false
+    },
     "button": true
   },
   "terminal": {
@@ -151,7 +167,7 @@
     "hide_hidden": false,
     "auto_fold_dirs": false,
     "auto_reveal_entries": true,
-    "indent_size": 24.0,
+    "indent_size": 17.0,
     "git_status": true,
     "folder_icons": false,
     "file_icons": true,
@@ -179,6 +195,7 @@
     "light": "One Light",
     "dark": "Tokyo Night"
   },
+  "file_scan_exclusions": ["**/.elixir_ls", "**/.expert"],
 
   //
   "lsp": {
@@ -187,6 +204,22 @@
         "yaml": {
           "hover": false
         }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "elixir": "html",
+          "heex": "html"
+        },
+        "experimental": {
+          "classRegex": ["class=\"([^\"]*)\"", "class='([^']*)'"]
+        }
+      }
+    },
+    "elixir-ls": {
+      "settings": {
+        "dialyzerEnabled": false
       }
     },
     "oxlint": {
@@ -211,6 +244,7 @@
   },
   "languages": {
     "CSS": {
+      "language_servers": ["tailwindcss-intellisense-css", "!vscode-css-language-server"],
       "format_on_save": "on",
       "prettier": {
         "allowed": false
@@ -221,6 +255,39 @@
             "name": "oxfmt"
           }
         }
+      ]
+    },
+    "Elixir": {
+      "language_servers": [
+        "expert",
+        "tailwindcss-language-server",
+        "!elixir-ls",
+        "!dexter",
+        "!next-ls",
+        "!lexical",
+        "..."
+      ]
+    },
+    "EEx": {
+      "language_servers": [
+        "expert",
+        "tailwindcss-language-server",
+        "!elixir-ls",
+        "!dexter",
+        "!next-ls",
+        "!lexical",
+        "..."
+      ]
+    },
+    "HEEx": {
+      "language_servers": [
+        "expert",
+        "tailwindcss-language-server",
+        "!elixir-ls",
+        "!dexter",
+        "!next-ls",
+        "!lexical",
+        "..."
       ]
     },
     "GraphQL": {
@@ -332,6 +399,7 @@
     },
     "Markdown": {
       "format_on_save": "on",
+      "soft_wrap": "bounded",
       "prettier": {
         "allowed": false
       },

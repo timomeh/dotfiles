@@ -6,6 +6,8 @@ thefuck --alias | source
 navi widget fish | source
 zoxide init --cmd cd fish | source
 starship init fish | source
+mise activate fish | source
+fnox activate fish | source
 
 # init mcfly
 set -x MCFLY_FUZZY 2
@@ -20,6 +22,7 @@ abbr -a pn pnpm
 abbr -a lg lazygit
 abbr -a z zed
 abbr -a oc opencode
+abbr -a ds 'docker compose -f ~/dotfiles/dev-services/compose.yaml'
 
 # generate abbreviations for all git aliases: g[alias] -> git [alias]
 for alias in (git wat | string match -r '^[^=]+' | string trim)
@@ -47,6 +50,7 @@ set -x EDITOR "zed --wait"
 set -x HOMEBREW_NO_ANALYTICS 1
 set -x HOMEBREW_BUNDLE_DUMP_NO_VSCODE 1
 set -x HOMEBREW_BUNDLE_FILE ~/.config/homebrew/Brewfile
+set -x ANDROID_HOME /Users/timo/Library/Android/sdk
 
 if not set -q XDG_CONFIG_HOME
   set -x XDG_CONFIG_HOME ~/.config

@@ -5,7 +5,7 @@
 
 [core]
   compression = 9
-  editor = code --wait
+  editor = zed --wait
   pager = delta
   ignorecase = false
 
@@ -42,7 +42,7 @@
   navigate = true
 
 [difftool "default-difftool"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+  cmd = zed --wait --diff $LOCAL $REMOTE
 
 [interactive]
   diffFilter = delta --color-only

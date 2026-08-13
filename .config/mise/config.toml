@@ -1,6 +1,105 @@
 [settings]
 idiomatic_version_file_enable_tools = []
+experimental = true
+dotfiles.root = "~/.dotfiles"
+dotfiles.default_mode = "symlink-each"
 
 [tools]
+age = "latest"
 bun = "latest"
 deno = "latest"
+elixir = "1.19.5"
+erlang = "latest"
+fnox = "latest"
+node = "26"
+"npm:eas-cli" = "latest"
+"npm:firebase-tools" = "latest"
+"npm:np" = "latest"
+
+[hooks]
+postinstall = "corepack enable"
+
+[env]
+_.path = ['./node_modules/.bin']
+
+[bootstrap.repos]
+"~/dotfiles" = { url = "git@github.com:timomeh/dotfiles.git", ref = "main" }
+
+[bootstrap.brew.taps]
+"clintmod/formulas" = "https://github.com/clintmod/homebrew-formulas.git"
+"anomalyco/tap" = "https://github.com/anomalyco/homebrew-tap.git"
+
+[bootstrap.packages]
+"brew:bat" = "latest"
+"brew:cocoapods" = "latest"
+"brew:doggo" = "latest"
+"brew:eza" = "latest"
+"brew:fd" = "latest"
+"brew:ffmpeg" = "latest"
+"brew:fish" = "latest"
+"brew:fzf" = "latest"
+"brew:gh" = "latest"
+"brew:git" = "latest"
+"brew:git-delta" = "latest"
+"brew:gnupg" = "latest"
+"brew:gradle" = "latest"
+"brew:lazygit" = "latest"
+"brew:less" = "latest"
+"brew:mas" = "latest"
+"brew:mcfly" = "latest"
+"brew:navi" = "latest"
+"brew:opencode" = "latest"
+"brew:pinentry-mac" = "latest"
+"brew:ripgrep" = "latest"
+"brew:starship" = "latest"
+"brew:stow" = "latest"
+"brew:thefuck" = "latest"
+"brew:watchman" = "latest"
+"brew:zellij" = "latest"
+"brew:zoxide" = "latest"
+"brew-cask:font-fira-code" = "latest"
+"brew-cask:font-fira-code-nerd-font" = "latest"
+"brew-cask:font-hack-nerd-font" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:sublime-text" = "latest"
+"brew-cask:contexts" = "latest"
+"brew-cask:orbstack" = "latest"
+
+[bootstrap.macos.dock]
+autohide = true
+orientation = "left"
+tilesize = 32
+magnification = false
+show_recents = false
+mru_spaces = false
+
+[bootstrap.macos.finder]
+show_all_files = true
+show_pathbar = true
+show_extensions_warning = false
+preferred_view_style = "column"
+
+[bootstrap.macos.defaults]
+"com.apple.dock" = {
+    autohide-delay = 0.0
+}
+"com.apple.finder" = {
+    ShowExternalHardDrivesOnDesktop = false,
+    ShowHardDrivesOnDesktop = false,
+    ShowMountedServersOnDesktop = false,
+    ShowRecentTags = false,
+    ShowRemovableMediaOnDesktop = false,
+    ShowSidebar = true
+}
+"com.contextsformac.Contexts" = {
+    CTKeyboardEventCommandModeActive = false,
+    CTPreferenceSidebarDisplayMode = "CTDisplayModeNone"
+}
+
+
+[dotfiles]
+"~/.dotfiles" = { source = "~/dotfiles", mode = "symlink" }
+"~/.config" = {}
+"~/.local" = {}
+"~/.ssh" = {}
+"~/.hushlogin" = { mode = "symlink" }
