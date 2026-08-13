@@ -15,6 +15,7 @@ node = "26"
 "npm:eas-cli" = "latest"
 "npm:firebase-tools" = "latest"
 "npm:np" = "latest"
+usage = "latest"
 
 [hooks]
 postinstall = "corepack enable"
