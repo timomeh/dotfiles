@@ -60,8 +60,8 @@ _.path = ['./node_modules/.bin']
 "brew-cask:font-hack-nerd-font" = "latest"
 "brew-cask:ghostty" = "latest"
 "brew-cask:sublime-text" = "latest"
-"brew-cask:contexts" = "latest"
 "brew-cask:orbstack" = "latest"
+"brew-cask:vorssaint" = "latest"
 
 [bootstrap.macos.dock]
 autohide = true
