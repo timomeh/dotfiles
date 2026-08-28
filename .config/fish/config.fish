@@ -12,9 +12,13 @@ fnox activate fish | source
 # init mcfly
 set -x MCFLY_FUZZY 2
 set -x MCFLY_INTERFACE_VIEW TOP
-set -x FZF_CTRL_R_OPTS "--reverse"
+set -x FZF_CTRL_R_OPTS "--reverse --print0"
 mcfly init fish | source
-mcfly-fzf init fish | source
+# Keep multiline history entries intact when the widget reads fzf's output.
+mcfly-fzf init fish |
+  string replace 'read -l result' 'read -lz result' |
+  string replace 'and eval $MCFLY_FZF_PATH select -- "$result"' 'and "$MCFLY_FZF_PATH" select -- "$result"' |
+  source
 
 # abbreviations
 abbr -a bb brew bundle
