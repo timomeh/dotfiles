@@ -20,35 +20,29 @@
   },
   {
     "bindings": {
-      "cmd-k right": "pane::SplitAndMoveRight"
+      "cmd-k right": ["workspace::MoveItemToPaneInDirection", { "direction": "right" }]
     }
   },
   {
-    "context": "Pane",
-    "unbind": {
-      "cmd-k left": "pane::SplitLeft"
-    }
-  },
-  {
-    "context": "Pane",
-    "unbind": {
-      "cmd-k right": "pane::SplitRight"
+    "bindings": {
+      "cmd-k left": ["workspace::MoveItemToPaneInDirection", { "direction": "left" }]
     }
   },
   {
     "context": "Pane",
     "bindings": {
-      "cmd-k cmd-left": "pane::SplitLeft"
+      "cmd-k cmd-left": "workspace::ActivatePaneLeft"
     }
   },
   {
+    "context": "Pane",
     "bindings": {
-      "cmd-k left": "pane::SplitAndMoveLeft"
+      "cmd-k cmd-right": "workspace::ActivatePaneRight"
     }
   },
   {
     "context": "Editor",
-      "bindings": {
+    "bindings": {
       "cmd-shift-d": "editor::DuplicateLineDown"
     }
   }

@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "tab_size": 2,
   "inline_code_actions": true,
   "agent_servers": {
     "opencode": {
@@ -142,6 +143,7 @@
     "button": true
   },
   "terminal": {
+    "dock": "right",
     "default_height": 480.0,
     "copy_on_select": true,
     "font_family": "FiraCode Nerd Font Mono",
@@ -159,6 +161,7 @@
     "active_language_button": true
   },
   "project_panel": {
+    "folder_indicator": "chevron",
     "sort_mode": "directories_first",
     "git_status_indicator": true,
     "diagnostic_badges": false,
@@ -166,10 +169,9 @@
     "hide_root": false,
     "hide_hidden": false,
     "auto_fold_dirs": false,
-    "auto_reveal_entries": true,
+    "auto_reveal_entries": false,
     "indent_size": 17.0,
     "git_status": true,
-    "folder_icons": false,
     "file_icons": true,
     "entry_spacing": "standard",
     "hide_gitignore": false,
@@ -199,6 +201,21 @@
 
   //
   "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "never"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "never"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    },
     "yaml-language-server": {
       "settings": {
         "yaml": {
@@ -224,7 +241,7 @@
           "run": "onType",
           "disableNestedConfig": false,
           "fixKind": "safe_fix",
-          "unusedDisableDirectives": "deny"
+          "unusedDisableDirectives": "allow"
         }
       }
     },
